@@ -2,6 +2,10 @@
 
 Carrier 에어컨 사용자를 위한 ESG 친환경 냉방 미션·GREEN POINT·리워드 웹앱입니다. 실제 에어컨 API 대신 사용자별 Supabase 가상 IoT 데이터를 사용합니다.
 
+## 배포 URL
+
+- https://carrier-greenon-gzde.onrender.com
+
 ## 주요 흐름
 
 회원가입/로그인 → 날씨와 가상 에어컨 확인 → GREEN MISSION 참여 → 30분 단위 시뮬레이션 → 포인트 적립 → 리워드 구매 → GREEN REPORT 확인
