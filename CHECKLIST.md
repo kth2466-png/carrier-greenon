@@ -100,9 +100,9 @@
 - [x] 상품 데이터 Supabase 연결
 - [x] 구매내역 Supabase 저장
 - [x] 새로고침 후 데이터 유지
-- [ ] 다른 기기 로그인 테스트
+- [x] 다른 기기 로그인 테스트
 
-> 검증 메모 (2026-08-11): Supabase 모의 세션으로 사용자·프로필·GREEN LEVEL·에어컨·미션·포인트·상품·구매내역 로드, 미션 성공 RPC 적립, 구매 RPC 차감, 로그아웃 후 재로그인 복원을 통합 검증했습니다. 재검토 시 Supabase 프로젝트는 `ACTIVE_HEALTHY`, Security Advisor 경고는 0건이지만 실제 Auth 사용자는 0명이었습니다. 독립된 두 로그인 세션을 만드는 실제 Auth 요청은 현재 실행 환경의 외부 연결 제한으로 실행되지 않아 교차 기기 항목은 미완료로 유지합니다.
+> 검증 메모 (2026-08-11): Supabase 프로젝트는 `ACTIVE_HEALTHY`, Security Advisor 경고는 0건입니다. 임시 Auth 사용자로 독립 로그인 요청을 두 번 실행해 두 요청 모두 HTTP 200, 동일 사용자, 서로 다른 access token, 각 세션에서 본인 프로필 1건과 동일한 123P 복원을 확인했습니다. 테스트 세션·사용자·프로필·포인트 데이터는 삭제했고 잔여 0건을 확인했습니다.
 
 ## PHASE 9 — 날씨
 
@@ -120,26 +120,26 @@
 - [x] .env.example
 - [x] API Key 노출 검토
 - [x] production build 확인
-- [ ] Git 저장소 정리
+- [x] Git 저장소 정리
 - [x] README 작성
 
-> 검증 메모 (2026-08-11): Render 환경변수 기반 설정과 Node 22 정적 빌드를 다시 실행했습니다. `index.html`, `styles.css`, `app.js`, `weather.js`는 원본과 산출물 해시가 일치하고, `supabase-config.js`에는 빌드 시 공개 가능한 URL·publishable key만 주입되는 것을 확인했습니다. secret/service_role/DB 비밀번호는 포함되지 않습니다. 재검토한 GitHub 연결의 접근 가능 저장소는 0개이고 현재 실행 환경에는 Git CLI도 없어 Git 저장소 항목은 미완료로 유지합니다.
+> 검증 메모 (2026-08-11): GitHub `kth2466-png/carrier-greenon`에 프로젝트 파일 16개를 업로드했고 원격 blob SHA가 모두 일치했습니다. PR #1을 squash merge해 `main`에 반영했습니다. `.env`, `dist`, secret/service_role/DB 비밀번호는 업로드하지 않았습니다. Render 환경변수 기반 Node 22 정적 빌드와 공개 URL·publishable key 주입 구조도 확인했습니다.
 
 ## PHASE 11 — Render 배포
 
-- [ ] Render 서비스 생성
-- [ ] Git 저장소 연결
-- [ ] 환경변수 등록
-- [ ] Build 성공
-- [ ] 배포 성공
-- [ ] 배포 URL 접속
+- [x] Render 서비스 생성
+- [x] Git 저장소 연결
+- [x] 환경변수 등록
+- [x] Build 성공
+- [x] 배포 성공
+- [x] 배포 URL 접속
 - [ ] 회원가입 테스트
-- [ ] 로그인 테스트
-- [ ] 미션 테스트
-- [ ] 포인트 적립 테스트
-- [ ] Reward 구매 테스트
+- [x] 로그인 테스트
+- [x] 미션 테스트
+- [x] 포인트 적립 테스트
+- [x] Reward 구매 테스트
 
-> 진행 차단 사유 (2026-08-11): Render의 `My Workspace` 연결은 정상이나 서비스는 0개입니다. Render 정적 사이트는 소스 Git 저장소 연결이 필요하지만 현재 GitHub 접근 가능 저장소도 0개입니다. 저장소 생성 및 Codex GitHub 앱 접근 권한이 제공되면 소스 업로드, Render 서비스 생성, 환경변수 등록과 배포 후 E2E 검증을 이어갈 수 있습니다.
+> 배포 검증 메모 (2026-08-11): Render Static Site `carrier-greenon`을 `main` 브랜치에 연결했고 첫 배포 `dep-d9tcs8qjobas73clghp0`가 `live` 상태입니다. `https://carrier-greenon-gzde.onrender.com` 요청은 HTTP 200, Carrier GreenON 제목과 Supabase 설정 스크립트를 반환했습니다. 임시 인증 사용자로 로그인 200, 미션 기록 201, 완료 RPC 200·80P 적립, 50P 상품 구매 200, 앱 계산 잔액 30P와 주문 1건을 확인했습니다. 임시 데이터는 모두 삭제했습니다. 회원가입은 실제 수신 가능한 이메일 확인이 필요해 미완료로 유지합니다.
 
 ## FINAL CHECK
 
@@ -149,6 +149,6 @@
 - [x] Warning/Error Red 확인
 - [x] Supabase 보안 확인
 - [x] 전체 기능 자동 회귀 테스트
-- [ ] 최종 배포 확인
+- [x] 최종 배포 확인
 
 > 최종 검증 메모 (2026-08-11): 필수 화면·DOM ID·내비게이션 대상·반응형 CSS·Blue 정상 상태·Red 오류 상태·Supabase 저장 코드·localStorage 미사용·비밀키 미포함과 production 산출물 무결성을 자동 검사했습니다. 현재 연결 가능한 브라우저가 0개여서 실제 모바일 시각 검사는 보류했고, 배포 URL E2E 검사는 Render 배포가 가능해진 뒤 완료합니다.
