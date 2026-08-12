@@ -905,3 +905,48 @@ renderUser();
 initializeAuth().catch((error) => {
   showAuthMessage(`초기 데이터를 불러오지 못했습니다: ${error.message}`, true);
 });
+
+// 메인 캐릭터가 마우스를 부드럽게 따라오도록 CSS 변수만 갱신합니다.
+// 실제 위치 계산은 requestAnimationFrame 안에서 실행해 잦은 포인터 이벤트에도 화면이 끊기지 않습니다.
+const heroCard = document.querySelector(".hero-card");
+const heroCharacter = document.querySelector("#hero-character");
+const canUseCharacterMotion = window.matchMedia("(pointer: fine) and (prefers-reduced-motion: no-preference)").matches;
+
+if (heroCard && heroCharacter && canUseCharacterMotion) {
+  let motionFrame = 0;
+  let characterX = 0;
+  let characterY = 0;
+  let characterRotateX = 0;
+  let characterRotateY = 0;
+
+  const drawCharacterMotion = () => {
+    heroCharacter.style.setProperty("--character-x", `${characterX.toFixed(2)}px`);
+    heroCharacter.style.setProperty("--character-y", `${characterY.toFixed(2)}px`);
+    heroCharacter.style.setProperty("--character-rx", `${characterRotateX.toFixed(2)}deg`);
+    heroCharacter.style.setProperty("--character-ry", `${characterRotateY.toFixed(2)}deg`);
+    motionFrame = 0;
+  };
+
+  const requestCharacterMotion = () => {
+    if (!motionFrame) motionFrame = window.requestAnimationFrame(drawCharacterMotion);
+  };
+
+  heroCard.addEventListener("pointermove", (event) => {
+    const bounds = heroCard.getBoundingClientRect();
+    const horizontalRatio = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const verticalRatio = (event.clientY - bounds.top) / bounds.height - 0.5;
+    characterX = horizontalRatio * 22;
+    characterY = verticalRatio * 14;
+    characterRotateX = verticalRatio * -5;
+    characterRotateY = horizontalRatio * 7;
+    requestCharacterMotion();
+  });
+
+  heroCard.addEventListener("pointerleave", () => {
+    characterX = 0;
+    characterY = 0;
+    characterRotateX = 0;
+    characterRotateY = 0;
+    requestCharacterMotion();
+  });
+}

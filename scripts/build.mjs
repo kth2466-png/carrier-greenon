@@ -24,13 +24,16 @@ export async function buildGreenOn({ rootDirectory, outputDirectory, supabaseUrl
     await cp(join(rootDirectory, fileName), join(outputDirectory, fileName));
   }
 
+  // 화면에서 사용하는 공개 이미지 자산도 Render 정적 배포 폴더에 함께 복사합니다.
+  await cp(join(rootDirectory, "assets"), join(outputDirectory, "assets"), { recursive: true });
+
   const publicConfig = `// Render 빌드 시 생성되는 공개 클라이언트 설정입니다.\nwindow.GREENON_CONFIG = ${JSON.stringify({
     supabaseUrl,
     supabasePublishableKey: publishableKey,
   }, null, 2)};\n`;
 
   await writeFile(join(outputDirectory, "supabase-config.js"), publicConfig, "utf8");
-  return { outputDirectory, copiedFiles: [...sourceFiles, "supabase-config.js"] };
+  return { outputDirectory, copiedFiles: [...sourceFiles, "assets/", "supabase-config.js"] };
 }
 
 const isDirectRun = globalThis.process?.argv?.[1]
