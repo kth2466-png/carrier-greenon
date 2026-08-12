@@ -68,6 +68,16 @@ const pointWallet = {
   transactions: [],
 };
 
+// 로그인 전에도 미션 구성을 미리 볼 수 있고, 로그인 후에는 같은 slug의 Supabase 데이터로 교체됩니다.
+const QUICK_MISSION_SLUGS = ["daily-attendance", "energy-guide", "eco-quiz", "weekly-attendance"];
+let quickMissions = [
+  { id: "daily-attendance", slug: "daily-attendance", title: "오늘 출석하기", description: "오늘의 GreenON 여정을 시작하고 출석을 남겨요.", rewardPoints: 100, icon: "✓", actionLabel: "출석하기", completed: false },
+  { id: "energy-guide", slug: "energy-guide", title: "에어컨 절약 방법 확인하기", description: "26℃ 이상 설정과 필터 관리 방법을 확인해요.", rewardPoints: 200, icon: "❄", actionLabel: "방법 확인", completed: false },
+  { id: "eco-quiz", slug: "eco-quiz", title: "친환경 냉방 퀴즈 참여하기", description: "간단한 냉방 퀴즈로 절약 상식을 점검해요.", rewardPoints: 300, icon: "?", actionLabel: "퀴즈 풀기", completed: false },
+  { id: "weekly-attendance", slug: "weekly-attendance", title: "일주일 연속 출석하기", description: "7일 연속 출석을 달성하면 보너스를 받아요.", rewardPoints: 500, icon: "7", actionLabel: "진행 확인", completed: false, progress: 0 },
+];
+let quickMissionInFlight = false;
+
 const missionElements = {
   card: document.querySelector("#mission-card"),
   status: document.querySelector("#mission-status"),
@@ -86,22 +96,27 @@ const missionElements = {
 };
 
 const walletElements = {
+  homeBalance: document.querySelector("#home-balance"),
   balance: document.querySelector("#wallet-balance"),
   list: document.querySelector("#transaction-list"),
   filters: [...document.querySelectorAll("[data-point-filter]")],
 };
 
+const quickMissionElements = {
+  grid: document.querySelector("#quick-mission-grid"),
+  count: document.querySelector("#quick-mission-count"),
+};
+
 // 로그인 전에도 화면 구조를 볼 수 있는 기본 목록이며, 로그인하면 Supabase rewards 데이터로 교체됩니다.
 let rewards = [
-  { id: "food-coffee", category: "food", name: "아이스 아메리카노", price: 50, icon: "☕", description: "시원한 아메리카노 모바일 교환권이에요." },
-  { id: "food-juice", category: "food", name: "청포도 에이드", price: 80, icon: "🥤", description: "상큼한 청포도 에이드 모바일 교환권이에요." },
-  { id: "life-tumbler", category: "life", name: "GreenON 텀블러", price: 120, icon: "🥛", description: "일회용 컵을 줄이는 친환경 다회용 텀블러예요." },
-  { id: "life-bag", category: "life", name: "리사이클 에코백", price: 160, icon: "👜", description: "재활용 원단으로 만든 가벼운 데일리 에코백이에요." },
-  { id: "carrier-filter", category: "carrier", name: "에어컨 필터 케어", price: 300, icon: "❄️", description: "쾌적한 냉방을 위한 캐리어 필터 케어 혜택이에요." },
-  { id: "carrier-kit", category: "carrier", name: "GreenON 홈 키트", price: 450, icon: "🏠", description: "친환경 냉방 생활을 돕는 Carrier GreenON 키트예요." },
+  { id: "coffee-coupon", category: "food", name: "아이스 아메리카노 교환권", price: 1500, icon: "☕", description: "시원한 아이스 아메리카노 모바일 교환권이에요." },
+  { id: "convenience-gift", category: "life", name: "편의점 상품권", price: 3000, icon: "🏪", description: "가까운 편의점에서 사용할 수 있는 모바일 상품권이에요." },
+  { id: "eco-tumbler", category: "life", name: "친환경 텀블러", price: 5000, icon: "🥤", description: "일회용 컵 사용을 줄여 주는 GreenON 텀블러예요." },
+  { id: "carrier-goods", category: "carrier", name: "Carrier 굿즈 세트", price: 8000, icon: "🎁", description: "Carrier Jump 크루를 위한 특별한 굿즈 세트예요." },
 ];
 
 const rewardShop = { category: "all", selectedRewardId: null, orders: [] };
+let purchaseInFlight = false;
 const categoryNames = { food: "FOOD", life: "LIFE", carrier: "CARRIER" };
 
 const shopElements = {
@@ -317,6 +332,133 @@ function renderMissionState() {
 }
 
 /**
+ * Supabase 미션 카탈로그와 사용자 완료 상태를 카드 목록으로 그립니다.
+ * 완료 아이콘과 문구를 함께 제공해 색상에만 의존하지 않도록 합니다.
+ */
+function renderQuickMissions() {
+  const completedCount = quickMissions.filter((mission) => mission.completed).length;
+  quickMissionElements.count.textContent = `${completedCount} / ${quickMissions.length} 완료`;
+
+  quickMissionElements.grid.innerHTML = quickMissions.map((mission) => {
+    const isWeeklyLocked = mission.slug === "weekly-attendance" && (mission.progress ?? 0) < 7;
+    const isDisabled = mission.completed || quickMissionInFlight || isWeeklyLocked;
+    const statusLabel = mission.completed
+      ? "✓ 완료"
+      : mission.slug === "weekly-attendance"
+        ? `진행 ${(mission.progress ?? 0)} / 7일`
+        : "참여 가능";
+    const buttonLabel = mission.completed
+      ? "포인트 지급 완료"
+      : isWeeklyLocked
+        ? `${mission.progress ?? 0} / 7일 진행 중`
+        : mission.actionLabel;
+
+    return `
+      <article class="quick-mission-card ${mission.completed ? "is-completed" : ""}">
+        <div class="quick-mission-top">
+          <span class="quick-mission-icon" aria-hidden="true">${mission.icon}</span>
+          <span class="quick-mission-points">+${mission.rewardPoints.toLocaleString("ko-KR")} P</span>
+        </div>
+        <span class="quick-mission-status">${statusLabel}</span>
+        <h3>${mission.title}</h3>
+        <p>${mission.description}</p>
+        <button type="button" data-quick-mission-id="${mission.id}" ${isDisabled ? "disabled" : ""} aria-label="${mission.title} ${buttonLabel}">
+          ${buttonLabel}
+        </button>
+      </article>`;
+  }).join("");
+
+  document.querySelectorAll("[data-quick-mission-id]").forEach((button) => {
+    button.addEventListener("click", () => completeQuickMission(button.dataset.quickMissionId));
+  });
+}
+
+function getSeoulDateOffset(offsetDays) {
+  const date = new Date();
+  date.setUTCDate(date.getUTCDate() + offsetDays);
+  return new Intl.DateTimeFormat("en-CA", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    timeZone: "Asia/Seoul",
+  }).format(date);
+}
+
+async function loadQuickMissionRecords() {
+  if (!currentUser || !supabaseClient) return;
+  const missionIds = quickMissions.map((mission) => mission.id).filter((id) => Number.isFinite(Number(id)));
+  if (missionIds.length === 0) return;
+
+  const { data, error } = await supabaseClient
+    .from("user_missions")
+    .select("mission_id, status, reward_granted, mission_date")
+    .in("mission_id", missionIds)
+    .gte("mission_date", getSeoulDateOffset(-6));
+  if (error) throw error;
+
+  const today = getSeoulDate();
+  const attendanceMission = quickMissions.find((mission) => mission.slug === "daily-attendance");
+  const attendanceDates = new Set((data ?? [])
+    .filter((record) => String(record.mission_id) === String(attendanceMission?.id) && record.status === "success")
+    .map((record) => record.mission_date));
+
+  quickMissions.forEach((mission) => {
+    mission.completed = (data ?? []).some((record) => (
+      String(record.mission_id) === String(mission.id)
+      && record.mission_date === today
+      && record.status === "success"
+      && record.reward_granted
+    ));
+    if (mission.slug === "weekly-attendance") mission.progress = attendanceDates.size;
+  });
+  renderQuickMissions();
+}
+
+async function completeQuickMission(missionId) {
+  const mission = quickMissions.find((item) => String(item.id) === String(missionId));
+  if (!mission || quickMissionInFlight) return;
+
+  if (!currentUser || !supabaseClient) {
+    showView("my");
+    showToast("로그인 후 포인트 미션에 참여할 수 있어요.");
+    return;
+  }
+
+  if (mission.slug === "energy-guide") {
+    const confirmed = window.confirm("절약 TIP: 설정온도 26℃ 이상, 깨끗한 필터, 자동 바람을 활용해 주세요. 확인하셨나요?");
+    if (!confirmed) return;
+  }
+
+  if (mission.slug === "eco-quiz") {
+    const confirmed = window.confirm("QUIZ: 여름철 친환경 냉방 권장 설정온도는 26℃ 이상입니다. 맞으면 확인을 눌러 주세요.");
+    if (!confirmed) return;
+  }
+
+  quickMissionInFlight = true;
+  renderQuickMissions();
+
+  try {
+    const { data: rewardPoints, error } = await supabaseClient.rpc("complete_quick_mission", { p_mission_id: mission.id });
+    if (error) throw error;
+    await Promise.all([loadPointData(), loadQuickMissionRecords()]);
+    renderUser();
+    showToast(`${mission.title} 완료! ${Number(rewardPoints).toLocaleString("ko-KR")}P가 적립됐어요.`);
+  } catch (error) {
+    if (/already completed/i.test(error.message)) {
+      await loadQuickMissionRecords();
+      showToast("이미 완료한 미션이에요. 포인트는 한 번만 지급됩니다.");
+    } else if (/seven consecutive/i.test(error.message)) {
+      showToast("7일 연속 출석을 채우면 완료할 수 있어요.");
+    } else {
+      showToast("미션 완료를 저장하지 못했어요. 잠시 후 다시 시도해 주세요.");
+    }
+  } finally {
+    quickMissionInFlight = false;
+    renderQuickMissions();
+  }
+}
+
+/**
  * GREEN POINT 거래 한 건을 추가하고 잔액을 같은 금액만큼 갱신합니다.
  */
 function calculatePointBalance() {
@@ -326,8 +468,10 @@ function calculatePointBalance() {
 }
 
 function renderWallet() {
+  walletElements.homeBalance.textContent = pointWallet.balance.toLocaleString("ko-KR");
   walletElements.balance.textContent = pointWallet.balance.toLocaleString("ko-KR");
   shopElements.balance.textContent = pointWallet.balance.toLocaleString("ko-KR");
+  renderRewards();
 
   const visibleTransactions = pointWallet.filter === "all"
     ? pointWallet.transactions
@@ -432,7 +576,12 @@ function resetUserData() {
   pointWallet.transactions = [];
   pointWallet.balance = 0;
   rewardShop.orders = [];
+  quickMissions.forEach((mission) => {
+    mission.completed = false;
+    if (mission.slug === "weekly-attendance") mission.progress = 0;
+  });
   renderAirconState();
+  renderQuickMissions();
   renderWallet();
   renderOrders();
 }
@@ -445,20 +594,36 @@ async function loadUserData() {
   dataLoading = true;
 
   try {
-    const [profileResult, missionResult, rewardsResult, airconResult, ordersResult] = await Promise.all([
+    const [profileResult, missionResult, quickMissionsResult, rewardsResult, airconResult, ordersResult] = await Promise.all([
       supabaseClient.from("profiles").select("display_name, green_level").single(),
-      supabaseClient.from("missions").select("id, target_minutes, reward_points").eq("is_active", true).order("id").limit(1).single(),
+      supabaseClient.from("missions").select("id, target_minutes, reward_points").eq("slug", "cool-26-120").eq("is_active", true).single(),
+      supabaseClient.from("missions").select("id, slug, title, description, reward_points").in("slug", QUICK_MISSION_SLUGS).eq("is_active", true),
       supabaseClient.from("rewards").select("id, slug, category, name, description, price, icon").eq("is_active", true).order("sort_order"),
       supabaseClient.from("aircon_status").select("power, mode, temperature, fan, usage_minutes, filter_status, sensor_status").single(),
       supabaseClient.from("reward_orders").select("id, points_spent, status, created_at, rewards(name, icon)").order("created_at", { ascending: false }),
     ]);
 
-    const firstError = [profileResult, missionResult, rewardsResult, airconResult, ordersResult].find((result) => result.error)?.error;
+    const firstError = [profileResult, missionResult, quickMissionsResult, rewardsResult, airconResult, ordersResult].find((result) => result.error)?.error;
     if (firstError) throw firstError;
 
     currentProfile = profileResult.data;
     userMission.missionId = missionResult.data.id;
     userMission.targetMinutes = missionResult.data.target_minutes;
+    const actionLabels = { "daily-attendance": "출석하기", "energy-guide": "방법 확인", "eco-quiz": "퀴즈 풀기", "weekly-attendance": "진행 확인" };
+    const missionIcons = { "daily-attendance": "✓", "energy-guide": "❄", "eco-quiz": "?", "weekly-attendance": "7" };
+    quickMissions = (quickMissionsResult.data ?? [])
+      .sort((left, right) => QUICK_MISSION_SLUGS.indexOf(left.slug) - QUICK_MISSION_SLUGS.indexOf(right.slug))
+      .map((mission) => ({
+        id: mission.id,
+        slug: mission.slug,
+        title: mission.title,
+        description: mission.description,
+        rewardPoints: mission.reward_points,
+        actionLabel: actionLabels[mission.slug],
+        icon: missionIcons[mission.slug],
+        completed: false,
+        progress: mission.slug === "weekly-attendance" ? 0 : undefined,
+      }));
     rewards = (rewardsResult.data ?? []).map((reward) => ({ ...reward }));
     applyAirconRecord(airconResult.data);
     rewardShop.orders = (ordersResult.data ?? []).map((order) => ({
@@ -484,7 +649,7 @@ async function loadUserData() {
       userMission.rewardGranted = missionRecord.reward_granted;
     }
 
-    await loadPointData();
+    await Promise.all([loadPointData(), loadQuickMissionRecords()]);
     renderAirconState();
     renderRewards();
     renderOrders();
@@ -505,14 +670,35 @@ function renderRewards() {
     button.classList.toggle("is-selected", button.dataset.rewardCategory === rewardShop.category);
   });
 
-  shopElements.grid.innerHTML = visibleRewards.map((reward) => `
-    <button class="reward-card" type="button" data-reward-id="${reward.id}">
-      <span class="reward-image" aria-hidden="true">${reward.icon}</span>
-      <span class="reward-info"><span class="reward-category-label">${categoryNames[reward.category]}</span><strong>${reward.name}</strong><span class="reward-price">${reward.price.toLocaleString("ko-KR")} P</span></span>
-    </button>`).join("");
+  shopElements.grid.innerHTML = visibleRewards.map((reward) => {
+    const isSignedOut = !currentUser;
+    const isInsufficient = Boolean(currentUser) && pointWallet.balance < reward.price;
+    const purchaseLabel = isSignedOut ? "로그인 후 구매" : isInsufficient ? "포인트 부족" : "구매하기";
+    return `
+      <article class="reward-card ${isInsufficient ? "is-insufficient" : ""}">
+        <span class="reward-image" aria-hidden="true">${reward.icon}</span>
+        <div class="reward-info">
+          <span class="reward-category-label">${categoryNames[reward.category]}</span>
+          <strong>${reward.name}</strong>
+          <p>${reward.description}</p>
+          <span class="reward-price">${reward.price.toLocaleString("ko-KR")} P</span>
+        </div>
+        <div class="reward-card-actions">
+          <button type="button" data-reward-id="${reward.id}" aria-label="${reward.name} 상세 보기">상세 보기</button>
+          <button class="reward-buy-button" type="button" data-purchase-reward="${reward.id}" ${isSignedOut || isInsufficient ? "disabled" : ""} aria-label="${reward.name} ${purchaseLabel}">${purchaseLabel}</button>
+        </div>
+      </article>`;
+  }).join("");
 
   document.querySelectorAll("[data-reward-id]").forEach((button) => {
     button.addEventListener("click", () => openRewardDetail(button.dataset.rewardId));
+  });
+
+  document.querySelectorAll("[data-purchase-reward]").forEach((button) => {
+    button.addEventListener("click", () => {
+      rewardShop.selectedRewardId = button.dataset.purchaseReward;
+      purchaseSelectedReward();
+    });
   });
 }
 
@@ -525,7 +711,10 @@ function openRewardDetail(rewardId) {
   shopElements.detailName.textContent = reward.name;
   shopElements.detailDescription.textContent = reward.description;
   shopElements.detailPrice.textContent = reward.price.toLocaleString("ko-KR");
-  shopElements.warning.hidden = true;
+  const isInsufficient = Boolean(currentUser) && pointWallet.balance < reward.price;
+  shopElements.warning.hidden = !isInsufficient;
+  shopElements.purchase.disabled = isInsufficient || purchaseInFlight;
+  shopElements.purchase.textContent = !currentUser ? "로그인 후 구매하기" : isInsufficient ? "포인트 부족" : "포인트로 구매하기";
   shopElements.modal.hidden = false;
 }
 
@@ -546,7 +735,7 @@ function renderOrders() {
 
 async function purchaseSelectedReward() {
   const reward = rewards.find((item) => String(item.id) === String(rewardShop.selectedRewardId));
-  if (!reward) return;
+  if (!reward || purchaseInFlight) return;
 
   if (!currentUser || !supabaseClient) {
     closeRewardDetail();
@@ -557,22 +746,31 @@ async function purchaseSelectedReward() {
 
   if (pointWallet.balance < reward.price) {
     shopElements.warning.hidden = false;
+    shopElements.purchase.disabled = true;
+    shopElements.purchase.textContent = "포인트 부족";
     return;
   }
 
+  const confirmed = window.confirm(`${reward.name}을(를) ${reward.price.toLocaleString("ko-KR")}P로 구매할까요?`);
+  if (!confirmed) return;
+
+  purchaseInFlight = true;
   shopElements.purchase.disabled = true;
+  shopElements.purchase.textContent = "구매 처리 중…";
   const { error } = await supabaseClient.rpc("purchase_reward", { p_reward_id: reward.id });
-  shopElements.purchase.disabled = false;
 
   if (error) {
     if (/insufficient points/i.test(error.message)) shopElements.warning.hidden = false;
     else showToast("구매 중 문제가 발생했어요. 다시 시도해 주세요.");
+    purchaseInFlight = false;
+    openRewardDetail(reward.id);
     return;
   }
 
   await loadUserDataAfterPurchase();
   closeRewardDetail();
-  showToast(`${reward.name} 구매가 완료됐어요.`);
+  showToast(`${reward.name} 구매 완료! ${reward.price.toLocaleString("ko-KR")}P가 차감됐어요.`);
+  purchaseInFlight = false;
 }
 
 async function loadUserDataAfterPurchase() {
@@ -897,6 +1095,7 @@ todayLabel.textContent = `${formattedToday} · 오늘도 시원하고 가볍게`
 const initialView = window.location.hash.replace("#", "") || "home";
 showView(initialView);
 renderAirconState();
+renderQuickMissions();
 renderWallet();
 renderRewards();
 renderOrders();
@@ -913,6 +1112,7 @@ const heroCharacter = document.querySelector("#hero-character");
 const canUseCharacterMotion = window.matchMedia("(pointer: fine) and (prefers-reduced-motion: no-preference)").matches;
 
 if (heroCard && heroCharacter && canUseCharacterMotion) {
+  const motionController = new AbortController();
   let motionFrame = 0;
   let characterX = 0;
   let characterY = 0;
@@ -931,22 +1131,32 @@ if (heroCard && heroCharacter && canUseCharacterMotion) {
     if (!motionFrame) motionFrame = window.requestAnimationFrame(drawCharacterMotion);
   };
 
-  heroCard.addEventListener("pointermove", (event) => {
-    const bounds = heroCard.getBoundingClientRect();
-    const horizontalRatio = (event.clientX - bounds.left) / bounds.width - 0.5;
-    const verticalRatio = (event.clientY - bounds.top) / bounds.height - 0.5;
-    characterX = horizontalRatio * 22;
-    characterY = verticalRatio * 14;
-    characterRotateX = verticalRatio * -5;
-    characterRotateY = horizontalRatio * 7;
-    requestCharacterMotion();
-  });
-
-  heroCard.addEventListener("pointerleave", () => {
+  const resetCharacterMotion = () => {
     characterX = 0;
     characterY = 0;
     characterRotateX = 0;
     characterRotateY = 0;
     requestCharacterMotion();
-  });
+  };
+
+  document.addEventListener("pointermove", (event) => {
+    const bounds = heroCard.getBoundingClientRect();
+    const horizontalRatio = Math.max(-0.5, Math.min(0.5, (event.clientX - bounds.left) / bounds.width - 0.5));
+    const verticalRatio = Math.max(-0.5, Math.min(0.5, (event.clientY - bounds.top) / bounds.height - 0.5));
+    characterX = horizontalRatio * 28;
+    characterY = verticalRatio * 20;
+    characterRotateX = verticalRatio * -6;
+    characterRotateY = horizontalRatio * 6;
+    requestCharacterMotion();
+  }, { signal: motionController.signal });
+
+  document.addEventListener("mouseout", (event) => {
+    if (!event.relatedTarget) resetCharacterMotion();
+  }, { signal: motionController.signal });
+
+  // 페이지가 제거될 때 이벤트와 대기 중인 프레임을 함께 정리해 메모리 누수를 막습니다.
+  window.addEventListener("pagehide", () => {
+    motionController.abort();
+    if (motionFrame) window.cancelAnimationFrame(motionFrame);
+  }, { once: true });
 }

@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#176bff" />
     <title>Carrier GreenON</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23176bff'/%3E%3Cpath d='M44 15C29 17 20 25 18 41c7-6 14-9 25-9-9 4-15 9-19 17 8 4 17 1 21-6 6-10 4-21-1-28Z' fill='white'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="styles.css?v=20260812-comic" />
+    <link rel="stylesheet" href="styles.css?v=20260812-aurora" />
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js" defer></script>
     <script src="supabase-config.js" defer></script>
     <script src="app.js" defer></script>
@@ -46,8 +46,8 @@
           <div class="welcome-row">
             <div>
               <p class="eyebrow" id="today-label">오늘도 시원하고 가볍게</p>
-              <h1 id="home-title">안녕하세요! <span aria-hidden="true">👋</span></h1>
-              <p>지구를 생각하는 냉방 습관을 시작해 볼까요?</p>
+              <h1 id="home-title">Carrier Jump 1기 화이팅!</h1>
+              <p>함께 만드는 시원한 실천, 오늘도 가볍게 시작해요.</p>
             </div>
             <div class="profile-avatar" aria-label="게스트 프로필">G</div>
           </div>
@@ -58,10 +58,15 @@
                 <span class="status-dot" aria-hidden="true"></span>
                 GREEN ON
               </span>
-              <h2>나의 시원함이<br />지구의 내일이 되도록</h2>
-              <p>작은 냉방 습관을 미션으로 실천하고 GREEN POINT도 모아 보세요.</p>
+              <h2>시원한 실천이<br />포인트가 되는 하루</h2>
+              <p>친환경 냉방 미션에 참여하고 GREEN POINT로 원하는 리워드를 만나 보세요.</p>
+              <div class="hero-point-summary" aria-label="현재 보유 GREEN POINT">
+                <span>MY GREEN POINT</span>
+                <strong><span id="home-balance">0</span> P</strong>
+                <button type="button" data-nav-target="wallet" aria-label="GREEN POINT 내역 보기">내역 보기</button>
+              </div>
               <button class="primary-button" type="button" data-nav-target="mission">
-                서비스 둘러보기
+                오늘의 미션 보기
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
               </button>
             </div>
@@ -70,9 +75,9 @@
               <span class="comic-burst burst-one"></span>
               <span class="comic-burst burst-two"></span>
               <div class="hero-character" id="hero-character">
-                <img src="assets/greenon-guide.webp" alt="" width="900" height="900" />
+                <img src="assets/carrier-jump-character.webp" alt="" width="900" height="900" />
               </div>
-              <span class="character-caption">GREEN MAKER</span>
+              <span class="character-caption">CARRIER JUMP CREW</span>
               <span class="sparkle sparkle-one">✦</span>
               <span class="sparkle sparkle-two">✦</span>
             </div>
@@ -300,12 +305,20 @@
             <div>
               <p class="eyebrow">TODAY'S CHALLENGE</p>
               <h1 id="mission-title">GREEN MISSION</h1>
-              <p>오늘의 작은 실천으로 시원한 변화를 만들어요.</p>
+              <p>하나씩 완료하고 오늘의 GREEN POINT를 모아 보세요.</p>
             </div>
             <span class="mission-leaf" aria-hidden="true">🌿</span>
           </div>
 
-          <article class="mission-card" id="mission-card" aria-live="polite">
+          <section class="quick-mission-section" aria-labelledby="quick-mission-title">
+            <div class="section-heading">
+              <div><p class="eyebrow">DAILY POINT MISSION</p><h2 id="quick-mission-title">오늘의 포인트 미션</h2></div>
+              <span class="mission-count" id="quick-mission-count">0 / 4 완료</span>
+            </div>
+            <div class="quick-mission-grid" id="quick-mission-grid" aria-live="polite"></div>
+          </section>
+
+          <article class="mission-card cooling-mission-card" id="mission-card" aria-live="polite">
             <div class="mission-card-top">
               <span class="mission-status" id="mission-status">참여 가능</span>
               <span class="mission-reward">+80 P</span>
