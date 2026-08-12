@@ -38,4 +38,863 @@ const airconElements = {
   temperature: document.querySelector("#temperature-value"),
   controlTemperature: document.querySelector("#control-temperature"),
   fan: document.querySelector("#fan-value"),
-  usage: document.querySelector("#usage-vwã^4¶‰ËkºwµçW¢7ƒ²Ğ¢6WF‚Öf÷&ÒÆ&VÂ²6öÆ÷#¢f"‚ÒÖ6öÆ÷"×FW‡B“²föçB×6—¦S¢ƒ²föçB×vV–v‡C¢ƒ²Ğ¢6WF‚Öf÷&Ò–çWB°¢F—7Æ“¢&Æö6³°¢v–GFƒ¢S°¢†V–v‡C¢Cgƒ°¢Ö&v–â×F÷¢gƒ°¢FF–æs¢7ƒ°¢6öÆ÷#¢f"‚ÒÖ6öÆ÷"×FW‡B“°¢&6¶w&÷VæC¢6c†f&fc°¢&÷&FW#¢‚6öÆ–Bf"‚ÒÖ6öÆ÷"ÖÆ–æR“°¢&÷&FW"×&F—W3¢7ƒ°¢föçB×6—¦S¢'ƒ°¢÷WFÆ–æS¢æöæS°§Ğ ¢6WF‚Öf÷&Ò–çWC¦fö7W2²&÷&FW"Ö6öÆ÷#¢f"‚ÒÖ6öÆ÷"×&–Ö'’“²&÷‚×6†F÷s¢7‚&v&ƒ#2ÃrÃ#SRÂã“²Ğ¢æWF‚ÖæÖRÖf–VÆE¶†–FFVåÒ²F—7Æ“¢æöæR–×÷'FçC²Ğ ¢æWF‚ÖÖW76vR°¢FF–æs¢ƒ°¢6öÆ÷#¢f"‚ÒÖ6öÆ÷"×&–Ö'’ÖF&²“°¢&6¶w&÷VæC¢f"‚ÒÖ6öÆ÷"×7W&f6RÖ&ÇVR“°¢&÷&FW"×&F—W3¢ƒ°¢föçB×6—¦S¢ƒ°¢Æ–æRÖ†V–v‡C¢ãS°§Ğ ¢æWF‚ÖÖW76vU¶†–FFVåÒ²F—7Æ“¢æöæS²Ğ¢æWF‚ÖÖW76vRæ—2ÖW'&÷"²6öÆ÷#¢6“#ƒ#ƒ²&6¶w&÷VæC¢6ffcc²&÷&FW#¢‚6öÆ–B6ffC&C#²Ğ ¢æWF‚×7V&Ö—B°¢Ö–âÖ†V–v‡C¢C‡ƒ°¢6öÆ÷#¢f"‚ÒÖ6öÆ÷"×v†—FR“°¢&6¶w&÷VæC¢f"‚ÒÖ6öÆ÷"×&–Ö'’“°¢&÷&FW#¢°¢&÷&FW"×&F—W3¢Gƒ°¢föçB×6—¦S¢'ƒ°¢föçB×vV–v‡C¢“°¢7W'6÷#¢ö–çFW#°§Ğ ¢æWF‚×7V&Ö—C¦F—6&ÆVB²÷6—G“¢ãSS²7W'6÷#¢v—C²Ğ¢æWF‚×6V7W&—G’²Ö&v–ã¢G‚²6öÆ÷#¢f"‚ÒÖ6öÆ÷"×FW‡BÖ×WFVB“²föçB×6—¦S¢‡ƒ²Æ–æRÖ†V–v‡C¢ãS²FW‡BÖÆ–vã¢6VçFW#²Ğ ¢ç&öf–ÆRÖF6†&ö&B²F—7Æ“¢w&–C²v¢‡ƒ²Ğ¢ç&öf–ÆRÖF6†&ö&E¶†–FFVåÒ²F—7Æ“¢æöæS²Ğ¢ç&öf–ÆRÖ6&B²6öÆ÷#¢f"‚ÒÖ6öÆ÷"×v†—FR“²&6¶w&÷VæC¢Æ–æV"Öw&F–VçBƒCVFVrÂ3sSF6bÂf"‚ÒÖ6öÆ÷"×&–Ö'’’Â3SVFfb“²&÷&FW#¢²Ğ¢ç&öf–ÆRÖ6&B×F÷²F—7Æ“¢fÆWƒ²Æ–vâÖ—FV×3¢6VçFW#²v¢7ƒ²Ğ¢ç&öf–ÆRÖÆ&vRÖfF"²F—7Æ“¢w&–C²v–GFƒ¢SWƒ²†V–v‡C¢SWƒ²&6¶w&÷VæC¢&v&ƒ#SRÃ#SRÃ#SRÂã"“²&÷&FW#¢'‚6öÆ–B&v&ƒ#SRÃ#SRÃ#SRÂã2“²&÷&FW"×&F—W3¢‡ƒ²föçB×6—¦S¢#ƒ²föçB×vV–v‡C¢“²Æ6RÖ—FV×3¢6VçFW#²Ğ¢ç&öf–ÆRÖ6&B×F÷7â²6öÆ÷#¢&v&ƒ#SRÃ#SRÃ#SRÂãr“²föçB×6—¦S¢—ƒ²Ğ¢ç&öf–ÆRÖ6&B×F÷ƒ"²Ö&v–ã¢'‚²föçB×6—¦S¢‡ƒ²Ğ¢ç&öf–ÆRÖ6&B×F÷²Ö&v–ã¢²6öÆ÷#¢&v&ƒ#SRÃ#SRÃ#SRÂãcb“²föçB×6—¦S¢—ƒ²Ğ¢æÆWfVÂ×&÷r²F—7Æ“¢fÆWƒ²§W7F–g’Ö6öçFVçC¢76RÖ&WGvVVã²Ö&v–ã¢#‚7ƒ²FF–æs¢7ƒ²&6¶w&÷VæC¢&v&ƒ#SRÃ#SRÃ#SRÂãB“²&÷&FW"×&F—W3¢7ƒ²föçB×6—¦S¢—ƒ²Ğ¢æÆWfVÂ×&÷r7G&öær²föçB×6—¦S¢ƒ²Ğ¢ç&öf–ÆRÖ6&Bâ'WGFöâ²v–GFƒ¢S²Ö–âÖ†V–v‡C¢3—ƒ²6öÆ÷#¢f"‚ÒÖ6öÆ÷"×v†—FR“²&6¶w&÷VæC¢&v&ƒ#SRÃ#SRÃ#SRÂãB“²&÷&FW#¢‚6öÆ–B&v&ƒ#SRÃ#SRÃ#SRÂã"“²&÷&FW"×&F—W3¢'ƒ²föçB×6—¦S¢ƒ²föçB×vV–v‡C¢ƒ²7W'6÷#¢ö–çFW#²Ğ¢æw&VVâ×&W÷'B²&÷‚×6†F÷s¢æöæS²Ğ¢ç&W÷'BÖw&–B²F—7Æ“¢w&–C²w&–B×FV×ÆFRÖ6öÇVÖç3¢&WVBƒ2Âg"“²v¢‡ƒ²Ğ¢ç&W÷'BÖw&–B'F–6ÆR²FF–æs¢G‚gƒ²&6¶w&÷VæC¢6cvffc²&÷&FW#¢‚6öÆ–B6VFc6f#²&÷&FW"×&F—W3¢Gƒ²FW‡BÖÆ–vã¢6VçFW#²Ğ¢ç&W÷'BÖw&–B'F–6ÆRâ7â²F—7Æ“¢&Æö6³²Ö&v–âÖ&÷GFöÓ¢‡ƒ²föçB×6—¦S¢—ƒ²Ğ¢ç&W÷'BÖw&–B7G&öær²F—7Æ“¢&Æö6³²6öÆ÷#¢f"‚ÒÖ6öÆ÷"×&–Ö'’ÖF&²“²föçB×6—¦S¢Gƒ²Ğ¢ç&W÷'BÖw&–B²Ö&v–ã¢7‚²6öÆ÷#¢f"‚ÒÖ6öÆ÷"×FW‡BÖ×WFVB“²föçB×6—¦S¢‡ƒ²Ğ ¤ÖVF–†Ö–â×v–GFƒ¢cƒ‚’°¢ç&Wv&BÖw&–B²w&–B×FV×ÆFRÖ6öÇVÖç3¢&WVBƒ2ÂÖ–æÖ‚ƒÂg"’“²Ğ¢ç&Wv&BÖÖöFÂ²Æ–vâÖ—FV×3¢6VçFW#²Ğ§Ğ ¢æ6öÖ–ær×6ööå¶†–FFVåÒ°¢F—7Æ“¢æöæS°§Ğ ¢æ6öÖ–ær×6ööâÖ–6öâ°¢F—7Æ“¢w&–C°¢v–GFƒ¢ƒ‡ƒ°¢†V–v‡C¢ƒ‡ƒ°¢Ö&v–âÖ&÷GFöÓ¢#Gƒ°¢&6¶w&÷VæC¢f"‚ÒÖ6öÆ÷"×7W&f6RÖ&ÇVR“°¢&÷&FW#¢‡‚6öÆ–Bf"‚ÒÖ6öÆ÷"×v†—FR“°¢&÷&FW"×&F—W3¢#‡ƒ°¢&÷‚×6†F÷s¢f"‚Ò×6†F÷rÖ6&B“°¢föçB×6—¦S¢3gƒ°¢Æ6RÖ—FV×3¢6VçFW#°§Ğ ¢æ6öÖ–ær×6ööââ¦Æ7BÖöb×G—R°¢Ö&v–ã¢'‚#Gƒ°¢6öÆ÷#¢f"‚ÒÖ6öÆ÷"×FW‡BÖ×WFVB“°¢föçB×6—¦S¢Gƒ°§Ğ ¢ç6V6öæF'’Ö'WGFöâ°¢6öÆ÷#¢f"‚ÒÖ6öÆ÷"×v†—FR“°¢&6¶w&÷VæC¢f"‚ÒÖ6öÆ÷"×&–Ö'’“°¢&÷&FW#¢°¢&÷‚×6†F÷s¢—‚#‚&v&ƒ#2ÂrÂ#SRÂã"“°§Ğ ¢æ&÷GFöÒÖæb°¢÷6—F–öã¢f—†VC°¢¢Ö–æFWƒ¢3°¢&–v‡C¢'ƒ°¢&÷GFöÓ¢Ö‚ƒ‚ÂVçb‡6fRÖ&VÖ–ç6WBÖ&÷GFöÒ’“°¢ÆVgC¢'ƒ°¢F—7Æ“¢w&–C°¢w&–B×FV×ÆFRÖ6öÇVÖç3¢&WVBƒRÂg"“°¢†V–v‡C¢f"‚ÒÖæbÖ†V–v‡B“°¢FF–æs¢wƒ°¢&6¶w&÷VæC¢&v&ƒ#SRÂ#SRÂ#SRÂã“b“°¢&÷&FW#¢‚6öÆ–B&v&ƒ##Â#32Â#C‚Âã’“°¢&÷&FW"×&F—W3¢#Gƒ°¢&÷‚×6†F÷s¢g‚3‡‚&v&ƒ3‚ÂƒÂ3rÂã‚“°¢&6¶G&÷Öf–ÇFW#¢&ÇW"ƒ‡‚“°§Ğ ¢ææbÖ—FVÒ°¢÷6—F–öã¢&VÆF—fS°¢F—7Æ“¢fÆWƒ°¢Æ–vâÖ—FV×3¢6VçFW#°¢fÆW‚ÖF—&V7F–öã¢6öÇVÖã°¢§W7F–g’Ö6öçFVçC¢6VçFW#°¢v¢Gƒ°¢FF–æs¢G‚'ƒ°¢6öÆ÷#¢3“FV&°¢&6¶w&÷VæC¢G&ç7&VçC°¢&÷&FW#¢°¢&÷&FW"×&F—W3¢wƒ°¢föçB×6—¦S¢ƒ°¢föçB×vV–v‡C¢s°¢7W'6÷#¢ö–çFW#°§Ğ ¢ææbÖ—FVÒ7fr°¢v–GFƒ¢#'ƒ°¢†V–v‡C¢#'ƒ°¢f–ÆÃ¢æöæS°¢7G&ö¶S¢7W'&VçD6öÆ÷#°¢7G&ö¶RÖÆ–æV6¢&÷VæC°¢7G&ö¶RÖÆ–æV¦ö–ã¢&÷VæC°¢7G&ö¶R×v–GFƒ¢ãƒ°§Ğ ¢ææbÖ—FVÒæ—2Ö7F—fR°¢6öÆ÷#¢f"‚ÒÖ6öÆ÷"×&–Ö'’“°¢&6¶w&÷VæC¢f"‚ÒÖ6öÆ÷"×7W&f6RÖ&ÇVR“°§Ğ ¢çFö7B°¢÷6—F–öã¢f—†VC°¢¢Ö–æFWƒ¢ƒ°¢&÷GFöÓ¢6Æ2‡f"‚ÒÖæbÖ†V–v‡B’²#‡‚“°¢ÆVgC¢SS°¢v–GFƒ¢Ö‚Ö6öçFVçC°¢Ö‚×v–GFƒ¢6Æ2ƒRÒC‚“°¢FF–æs¢'‚wƒ°¢6öÆ÷#¢f"‚ÒÖ6öÆ÷"×v†—FR“°¢&6¶w&÷VæC¢f"‚ÒÖ6öÆ÷"×FW‡B“°¢&÷&FW"×&F—W3¢7ƒ°¢&÷‚×6†F÷s¢f"‚Ò×6†F÷rÖ6&B“°¢föçB×6—¦S¢7ƒ°¢G&ç6f÷&Ó¢G&ç6ÆFU‚‚ÓSR“°§Ğ ¢çFö7E¶†–FFVåÒ°¢F—7Æ“¢æöæS°§Ğ ¦'WGFöã¦fö7W2×f—6–&ÆRÀ¦¦fö7W2×f—6–&ÆR°¢÷WFÆ–æS¢7‚6öÆ–B&v&ƒ#2ÂrÂ#SRÂã3R“°¢÷WFÆ–æRÖöfg6WC¢7ƒ°§Ğ ¤ÖVF–†Ö–â×v–GFƒ¢cƒ‚’°¢§&ö÷B°¢Ò×vRÖwWGFW#¢3Gƒ°¢Ğ ¢çF÷Ö†VFW"°¢FF–ærÖ–æÆ–æS¢Ö‚ƒ3G‚Â6Æ2‚ƒRÒ#‚’ò"’“°¢Ğ ¢æ†W&òÖ6&B°¢w&–B×FV×ÆFRÖ6öÇVÖç3¢Ö–æÖ‚ƒÂã&g"’Ö–æÖ‚ƒ#S‚Âã†g"“°¢Ö–âÖ†V–v‡C¢3cƒ°¢FF–æs¢C'ƒ°¢Ğ ¢æ†W&òÖ–ÆÇW7G&F–öâ°¢Æ–vâ×6VÆc¢6VçFW#°¢Ö–âÖ†V–v‡C¢#Sƒ°¢Ğ ¢çÆæWB°¢&–v‡C¢#gƒ°¢&÷GFöÓ¢3‡ƒ°¢v–GFƒ¢c‡ƒ°¢†V–v‡C¢c‡ƒ°¢Ğ ¢çÆæWBÖf6R°¢F÷¢s'ƒ°¢ÆVgC¢S—ƒ°¢Ğ ¢æ¦÷W&æW’Öw&–B°¢w&–B×FV×ÆFRÖ6öÇVÖç3¢&WVBƒ2Âg"“°¢Ğ ¢æ—&6öâÖ6&B°¢FF–æs¢#‡ƒ°¢Ğ ¢æ—&6öâ×7FG2°¢w&–B×FV×ÆFRÖ6öÇVÖç3¢&WVBƒBÂÖ–æÖ‚ƒÂg"’“°¢Ğ ¢æ&÷GFöÒÖæb°¢&–v‡C¢SS°¢ÆVgC¢WFó°¢v–GFƒ¢Ö–âƒSC‚Â6Æ2ƒRÒ3'‚’“°¢G&ç6f÷&Ó¢G&ç6ÆFU‚ƒSR“°¢Ğ§Ğ ¤ÖVF–†Ö–â×v–GFƒ¢#G‚’°¢çf–Wr°¢FF–ær×F÷¢C'ƒ°¢Ğ ¢çvVÆ6öÖR×&÷r°¢Ö&v–âÖ&÷GFöÓ¢3ƒ°¢Ğ ¢æ¦÷W&æW’Ö6&B°¢G&ç6—F–öã¢G&ç6f÷&Òc×2V6RÂ&÷‚×6†F÷rc×2V6S°¢Ğ ¢æ¦÷W&æW’Ö6&C¦†÷fW"°¢&÷‚×6†F÷s¢—‚C'‚&v&ƒ#’Â“Âs"ÂãR“°¢G&ç6f÷&Ó¢G&ç6ÆFU’‚ÓG‚“°¢Ğ§Ğ ¤ÖVF–‡&VfW'2×&VGV6VBÖÖ÷F–öã¢&VGV6R’°¢¢À¢££¦&Vf÷&RÀ¢££¦gFW"°¢67&öÆÂÖ&V†f–÷#¢WFò–×÷'FçC°¢G&ç6—F–öâÖGW&F–öã¢ã×2–×÷'FçC°¢Ğ§Ğ
+  usage: document.querySelector("#usage-value"),
+  filter: document.querySelector("#filter-value"),
+  sensor: document.querySelector("#sensor-value"),
+  filterStat: document.querySelector("#filter-stat"),
+  sensorStat: document.querySelector("#sensor-stat"),
+  warning: document.querySelector("#aircon-warning"),
+  warningTitle: document.querySelector("#warning-title"),
+  warningMessage: document.querySelector("#warning-message"),
+  powerToggle: document.querySelector("#power-toggle"),
+  powerToggleLabel: document.querySelector("#power-toggle-label"),
+  fanControl: document.querySelector("#fan-control"),
+};
+
+// ë¡œê·¸ì¸ ì‚¬ìš©ìì˜ ì˜¤ëŠ˜ ë¯¸ì…˜ ìƒíƒœë¥¼ Supabase user_missions í–‰ê³¼ ë™ê¸°í™”í•©ë‹ˆë‹¤.
+const userMission = {
+  id: null,
+  missionId: null,
+  status: "available",
+  elapsedMinutes: 0,
+  targetMinutes: 120,
+  rewardGranted: false,
+};
+
+// í¬ì¸íŠ¸ ì”ì•¡ì€ Supabase ê±°ë˜ ë‚´ì—­ì˜ í•©ê³„ë¡œ ê³„ì‚°í•´ ìˆ«ìì™€ ê¸°ë¡ì´ ì–´ê¸‹ë‚˜ì§€ ì•Šê²Œ í•©ë‹ˆë‹¤.
+const pointWallet = {
+  balance: 0,
+  filter: "all",
+  transactions: [],
+};
+
+const missionElements = {
+  card: document.querySelector("#mission-card"),
+  status: document.querySelector("#mission-status"),
+  progressText: document.querySelector("#mission-progress-text"),
+  progressBar: document.querySelector("#mission-progress-bar"),
+  progressTrack: document.querySelector(".progress-track"),
+  elapsed: document.querySelector("#mission-elapsed"),
+  alert: document.querySelector("#mission-alert"),
+  alertTitle: document.querySelector("#mission-alert-title"),
+  alertMessage: document.querySelector("#mission-alert-message"),
+  start: document.querySelector("#mission-start"),
+  time: document.querySelector("#mission-time"),
+  conditionPower: document.querySelector("#condition-power"),
+  conditionTemperature: document.querySelector("#condition-temperature"),
+  conditionDevice: document.querySelector("#condition-device"),
+};
+
+const walletElements = {
+  balance: document.querySelector("#wallet-balance"),
+  list: document.querySelector("#transaction-list"),
+  filters: [...document.querySelectorAll("[data-point-filter]")],
+};
+
+// ë¡œê·¸ì¸ ì „ì—ë„ í™”ë©´ êµ¬ì¡°ë¥¼ ë³¼ ìˆ˜ ìˆëŠ” ê¸°ë³¸ ëª©ë¡ì´ë©°, ë¡œê·¸ì¸í•˜ë©´ Supabase rewards ë°ì´í„°ë¡œ êµì²´ë©ë‹ˆë‹¤.
+let rewards = [
+  { id: "food-coffee", category: "food", name: "ì•„ì´ìŠ¤ ì•„ë©”ë¦¬ì¹´ë…¸", price: 50, icon: "â˜•", description: "ì‹œì›í•œ ì•„ë©”ë¦¬ì¹´ë…¸ ëª¨ë°”ì¼ êµí™˜ê¶Œì´ì—ìš”." },
+  { id: "food-juice", category: "food", name: "ì²­í¬ë„ ì—ì´ë“œ", price: 80, icon: "ğŸ¥¤", description: "ìƒí¼í•œ ì²­í¬ë„ ì—ì´ë“œ ëª¨ë°”ì¼ êµí™˜ê¶Œì´ì—ìš”." },
+  { id: "life-tumbler", category: "life", name: "GreenON í…€ë¸”ëŸ¬", price: 120, icon: "ğŸ¥›", description: "ì¼íšŒìš© ì»µì„ ì¤„ì´ëŠ” ì¹œí™˜ê²½ ë‹¤íšŒìš© í…€ë¸”ëŸ¬ì˜ˆìš”." },
+  { id: "life-bag", category: "life", name: "ë¦¬ì‚¬ì´í´ ì—ì½”ë°±", price: 160, icon: "ğŸ‘œ", description: "ì¬í™œìš© ì›ë‹¨ìœ¼ë¡œ ë§Œë“  ê°€ë²¼ìš´ ë°ì¼ë¦¬ ì—ì½”ë°±ì´ì—ìš”." },
+  { id: "carrier-filter", category: "carrier", name: "ì—ì–´ì»¨ í•„í„° ì¼€ì–´", price: 300, icon: "â„ï¸", description: "ì¾Œì í•œ ëƒ‰ë°©ì„ ìœ„í•œ ìºë¦¬ì–´ í•„í„° ì¼€ì–´ í˜œíƒì´ì—ìš”." },
+  { id: "carrier-kit", category: "carrier", name: "GreenON í™ˆ í‚¤íŠ¸", price: 450, icon: "ğŸ ", description: "ì¹œí™˜ê²½ ëƒ‰ë°© ìƒí™œì„ ë•ëŠ” Carrier GreenON í‚¤íŠ¸ì˜ˆìš”." },
+];
+
+const rewardShop = { category: "all", selectedRewardId: null, orders: [] };
+const categoryNames = { food: "FOOD", life: "LIFE", carrier: "CARRIER" };
+
+const shopElements = {
+  balance: document.querySelector("#shop-balance"),
+  grid: document.querySelector("#reward-grid"),
+  categories: [...document.querySelectorAll("[data-reward-category]")],
+  orderList: document.querySelector("#order-list"),
+  modal: document.querySelector("#reward-modal"),
+  detailImage: document.querySelector("#reward-detail-image"),
+  detailCategory: document.querySelector("#reward-detail-category"),
+  detailName: document.querySelector("#reward-detail-name"),
+  detailDescription: document.querySelector("#reward-detail-description"),
+  detailPrice: document.querySelector("#reward-detail-price"),
+  warning: document.querySelector("#purchase-warning"),
+  purchase: document.querySelector("#purchase-button"),
+};
+
+const authElements = {
+  card: document.querySelector("#auth-card"),
+  dashboard: document.querySelector("#profile-dashboard"),
+  tabs: [...document.querySelectorAll("[data-auth-mode]")],
+  form: document.querySelector("#auth-form"),
+  nameField: document.querySelector("#auth-name-field"),
+  name: document.querySelector("#auth-name"),
+  email: document.querySelector("#auth-email"),
+  password: document.querySelector("#auth-password"),
+  message: document.querySelector("#auth-message"),
+  submit: document.querySelector("#auth-submit"),
+  title: document.querySelector("#auth-title"),
+  subtitle: document.querySelector("#auth-subtitle"),
+  logout: document.querySelector("#logout-button"),
+  profileName: document.querySelector("#profile-name"),
+  profileEmail: document.querySelector("#profile-email"),
+  profileInitial: document.querySelector("#profile-initial"),
+  profileLevel: document.querySelector("#profile-level"),
+  reportMissions: document.querySelector("#report-missions"),
+  reportPoints: document.querySelector("#report-points"),
+  reportOrders: document.querySelector("#report-orders"),
+};
+
+let toastTimer;
+
+/**
+ * ì‚¬ìš©ìê°€ ì„ íƒí•œ ë©”ë‰´ í™”ë©´ë§Œ ë³´ì—¬ ì¤ë‹ˆë‹¤.
+ * í˜„ì¬ ë‹¨ê³„ì—ì„œëŠ” í™ˆ í™”ë©´ ì™¸ ë©”ë‰´ëŠ” ì´í›„ ê¸°ëŠ¥ì„ ìœ„í•œ ì•ˆë‚´ í™”ë©´ìœ¼ë¡œ ì—°ê²°ë©ë‹ˆë‹¤.
+ */
+function showView(targetName) {
+  const targetView = views.find((view) => view.dataset.view === targetName);
+
+  // ì˜ëª»ëœ í™”ë©´ ì´ë¦„ì´ ë“¤ì–´ì˜¤ë©´ ë¹ˆ í™”ë©´ì´ ë˜ì§€ ì•Šë„ë¡ í™ˆìœ¼ë¡œ ì•ˆì „í•˜ê²Œ ëŒì•„ê°‘ë‹ˆë‹¤.
+  if (!targetView) {
+    showView("home");
+    return;
+  }
+
+  views.forEach((view) => {
+    const isTarget = view === targetView;
+    view.hidden = !isTarget;
+    view.classList.toggle("is-active", isTarget);
+  });
+
+  bottomNavigationButtons.forEach((button) => {
+    const isActive = button.dataset.navTarget === targetName;
+    button.classList.toggle("is-active", isActive);
+
+    if (isActive) {
+      button.setAttribute("aria-current", "page");
+    } else {
+      button.removeAttribute("aria-current");
+    }
+  });
+
+  // ë©”ë‰´ë¥¼ ë°”ê¿€ ë•Œ ì½˜í…ì¸ ì˜ ì‹œì‘ì ìœ¼ë¡œ ì´ë™í•´ ëª¨ë°”ì¼ì—ì„œë„ ë§¥ë½ì„ ìƒì§€ ì•Šê²Œ í•©ë‹ˆë‹¤.
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  history.replaceState(null, "", `#${targetName}`);
+}
+
+/**
+ * ì•„ì§ ì—°ê²°ë˜ì§€ ì•Šì€ ê¸°ëŠ¥ì„ ëˆŒë €ì„ ë•Œ ê°„ë‹¨í•œ ì•ˆë‚´ ë©”ì‹œì§€ë¥¼ í‘œì‹œí•©ë‹ˆë‹¤.
+ */
+function showToast(message) {
+  window.clearTimeout(toastTimer);
+  toast.textContent = message;
+  toast.hidden = false;
+
+  toastTimer = window.setTimeout(() => {
+    toast.hidden = true;
+  }, 2600);
+}
+
+/**
+ * ë¶„ ë‹¨ìœ„ ì‚¬ìš©ì‹œê°„ì„ ì‚¬ìš©ìê°€ ì½ê¸° ì‰¬ìš´ 'ì‹œê°„/ë¶„' í˜•ì‹ìœ¼ë¡œ ë°”ê¿‰ë‹ˆë‹¤.
+ */
+function formatUsageTime(totalMinutes) {
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+
+  if (hours === 0) return `${minutes}ë¶„`;
+  if (minutes === 0) return `${hours}ì‹œê°„`;
+  return `${hours}ì‹œê°„ ${minutes}ë¶„`;
+}
+
+/**
+ * airconStateì˜ ê°’ì„ í™”ë©´ ì „ì²´ì— ë°˜ì˜í•©ë‹ˆë‹¤.
+ * ìœ„í—˜ ìƒíƒœëŠ” í•„í„° ë˜ëŠ” ì„¼ì„œì— ë¬¸ì œê°€ ìˆì„ ë•Œë§Œ Red UIë¡œ í‘œì‹œí•©ë‹ˆë‹¤.
+ */
+function renderAirconState() {
+  const hasFilterWarning = airconState.filter === "check";
+  const hasSensorError = airconState.sensor === "error";
+  const hasDanger = hasFilterWarning || hasSensorError;
+
+  airconElements.power.textContent = airconState.power ? "ON" : "OFF";
+  airconElements.mode.textContent = airconState.power ? `${airconState.mode} ìš´ì „ ì¤‘` : "ìš´ì „ ì •ì§€";
+  airconElements.temperature.textContent = airconState.temperature;
+  airconElements.controlTemperature.textContent = airconState.temperature;
+  airconElements.fan.textContent = airconState.power ? airconState.fan : "ì •ì§€";
+  airconElements.usage.textContent = formatUsageTime(airconState.usageMinutes);
+  airconElements.filter.textContent = hasFilterWarning ? "ì ê²€ í•„ìš”" : "ê¹¨ë—í•¨";
+  airconElements.sensor.textContent = hasSensorError ? "ì—°ê²° ì˜¤ë¥˜" : "ì •ìƒ";
+
+  airconElements.card.classList.toggle("is-danger", hasDanger);
+  airconElements.filterStat.classList.toggle("is-danger", hasFilterWarning);
+  airconElements.sensorStat.classList.toggle("is-danger", hasSensorError);
+  airconElements.warning.hidden = !hasDanger;
+
+  airconElements.powerToggle.classList.toggle("is-on", airconState.power);
+  airconElements.powerToggle.setAttribute("aria-checked", String(airconState.power));
+  airconElements.powerToggleLabel.textContent = airconState.power ? "ON" : "OFF";
+  airconElements.fanControl.textContent = airconState.fan;
+
+  if (hasSensorError) {
+    airconElements.deviceStateText.textContent = "ì„¼ì„œ ì˜¤ë¥˜";
+    airconElements.warningTitle.textContent = "ì„¼ì„œ ì—°ê²°ì„ í™•ì¸í•´ ì£¼ì„¸ìš”";
+    airconElements.warningMessage.textContent = "ì˜¨ë„ ì„¼ì„œ ë°ì´í„°ë¥¼ ë¶ˆëŸ¬ì˜¬ ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ì‹œë®¬ë ˆì´ì…˜ ìƒíƒœë¥¼ ì •ìƒìœ¼ë¡œ ë³€ê²½í•´ ì£¼ì„¸ìš”.";
+  } else if (hasFilterWarning) {
+    airconElements.deviceStateText.textContent = "í•„í„° ì ê²€";
+    airconElements.warningTitle.textContent = "í•„í„° ì ê²€ì´ í•„ìš”í•´ìš”";
+    airconElements.warningMessage.textContent = "ê¹¨ë—í•œ ê³µê¸°ì™€ íš¨ìœ¨ì ì¸ ëƒ‰ë°©ì„ ìœ„í•´ í•„í„°ë¥¼ ì²­ì†Œí•´ ì£¼ì„¸ìš”.";
+  } else {
+    airconElements.deviceStateText.textContent = airconState.power ? "ì •ìƒ ìš´ì „" : "ì „ì› êº¼ì§";
+  }
+
+  renderMissionState();
+}
+
+/**
+ * í˜„ì¬ ê°€ìƒ ì—ì–´ì»¨ ìƒíƒœê°€ ì˜¤ëŠ˜ì˜ ì¹œí™˜ê²½ ë¯¸ì…˜ ì¡°ê±´ì„ ë§Œì¡±í•˜ëŠ”ì§€ ê³„ì‚°í•©ë‹ˆë‹¤.
+ */
+function getMissionConditions() {
+  return {
+    power: airconState.power && airconState.mode === "ëƒ‰ë°©",
+    temperature: airconState.temperature >= 26,
+    device: airconState.filter === "clean" && airconState.sensor === "normal",
+  };
+}
+
+function areMissionConditionsValid() {
+  return Object.values(getMissionConditions()).every(Boolean);
+}
+
+/**
+ * ì—ì–´ì»¨ ì¡°ê±´ê³¼ ì‚¬ìš©ì ì°¸ì—¬ ìƒíƒœë¥¼ GREEN MISSION ì¹´ë“œì— ê·¸ë¦½ë‹ˆë‹¤.
+ */
+function renderMissionState() {
+  const conditions = getMissionConditions();
+  const progress = Math.min(100, Math.round((userMission.elapsedMinutes / userMission.targetMinutes) * 100));
+  const isActive = userMission.status === "active";
+  const isSuccess = userMission.status === "success";
+  const isFailed = userMission.status === "failed";
+  const isInvalid = !areMissionConditionsValid();
+
+  missionElements.conditionPower.classList.toggle("is-invalid", !conditions.power);
+  missionElements.conditionTemperature.classList.toggle("is-invalid", !conditions.temperature);
+  missionElements.conditionDevice.classList.toggle("is-invalid", !conditions.device);
+  missionElements.card.classList.toggle("is-active", isActive);
+  missionElements.card.classList.toggle("is-success", isSuccess);
+  missionElements.card.classList.toggle("is-failed", isFailed);
+  missionElements.progressText.textContent = `${progress}%`;
+  missionElements.progressBar.style.width = `${progress}%`;
+  missionElements.progressTrack.setAttribute("aria-valuenow", String(progress));
+  missionElements.elapsed.textContent = `${userMission.elapsedMinutes}ë¶„ ì§„í–‰`;
+  missionElements.time.hidden = !isActive;
+
+  if (isSuccess) {
+    missionElements.status.textContent = "ë¯¸ì…˜ ì„±ê³µ";
+    missionElements.start.textContent = "ì˜¤ëŠ˜ì˜ ë¯¸ì…˜ ì™„ë£Œ";
+    missionElements.start.disabled = true;
+    missionElements.alert.hidden = true;
+    return;
+  }
+
+  if (isFailed) {
+    missionElements.status.textContent = "ë¯¸ì…˜ ì‹¤íŒ¨";
+    missionElements.start.textContent = "ë‹¤ì‹œ ë„ì „í•˜ê¸°";
+    missionElements.start.disabled = false;
+    missionElements.alert.hidden = false;
+    missionElements.alertTitle.textContent = "ë¯¸ì…˜ ì¡°ê±´ì„ ìœ ì§€í•˜ì§€ ëª»í–ˆì–´ìš”";
+    missionElements.alertMessage.textContent = "ì—ì–´ì»¨ ìƒíƒœë¥¼ ì •ìƒìœ¼ë¡œ ë§ì¶˜ ë’¤ ë‹¤ì‹œ ë„ì „í•´ ì£¼ì„¸ìš”.";
+    return;
+  }
+
+  missionElements.start.disabled = false;
+  missionElements.status.textContent = isActive ? "ì§„í–‰ ì¤‘" : "ì°¸ì—¬ ê°€ëŠ¥";
+  missionElements.start.textContent = isActive ? "ë¯¸ì…˜ ì§„í–‰ ì¤‘" : "ë¯¸ì…˜ ì‹œì‘í•˜ê¸°";
+
+  if (isInvalid) {
+    missionElements.alert.hidden = false;
+    missionElements.alertTitle.textContent = "ë¯¸ì…˜ ì¡°ê±´ì„ í™•ì¸í•´ ì£¼ì„¸ìš”";
+    missionElements.alertMessage.textContent = "ì „ì›Â·ì˜¨ë„Â·ê¸°ê¸° ìƒíƒœë¥¼ ëª¨ë‘ ì •ìƒ ì¡°ê±´ìœ¼ë¡œ ë§ì¶°ì•¼ ì‹œê°„ì´ ì¸ì •ë¼ìš”.";
+  } else {
+    missionElements.alert.hidden = true;
+  }
+}
+
+/**
+ * GREEN POINT ê±°ë˜ í•œ ê±´ì„ ì¶”ê°€í•˜ê³  ì”ì•¡ì„ ê°™ì€ ê¸ˆì•¡ë§Œí¼ ê°±ì‹ í•©ë‹ˆë‹¤.
+ */
+function calculatePointBalance() {
+  pointWallet.balance = pointWallet.transactions.reduce((balance, transaction) => {
+    return balance + (transaction.type === "earn" ? transaction.amount : -transaction.amount);
+  }, 0);
+}
+
+function renderWallet() {
+  walletElements.balance.textContent = pointWallet.balance.toLocaleString("ko-KR");
+  shopElements.balance.textContent = pointWallet.balance.toLocaleString("ko-KR");
+
+  const visibleTransactions = pointWallet.filter === "all"
+    ? pointWallet.transactions
+    : pointWallet.transactions.filter((transaction) => transaction.type === pointWallet.filter);
+
+  walletElements.filters.forEach((button) => {
+    button.classList.toggle("is-selected", button.dataset.pointFilter === pointWallet.filter);
+  });
+
+  if (visibleTransactions.length === 0) {
+    const emptyMessage = pointWallet.filter === "use"
+      ? "ì•„ì§ ì‚¬ìš©í•œ í¬ì¸íŠ¸ê°€ ì—†ì–´ìš”.<br>ë¦¬ì›Œë“œ ìˆì—ì„œ ì²« ë¦¬ì›Œë“œë¥¼ ë§Œë‚˜ ë³´ì„¸ìš”."
+      : "ì•„ì§ í¬ì¸íŠ¸ ë‚´ì—­ì´ ì—†ì–´ìš”.<br>GREEN MISSIONì— ë„ì „í•´ ë³´ì„¸ìš”.";
+    walletElements.list.innerHTML = `<div class="transaction-empty">${emptyMessage}</div>`;
+    return;
+  }
+
+  walletElements.list.innerHTML = visibleTransactions.map((transaction) => {
+    const isEarn = transaction.type === "earn";
+    const date = new Intl.DateTimeFormat("ko-KR", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(transaction.createdAt);
+    return `
+      <article class="transaction-item ${isEarn ? "is-earn" : "is-use"}">
+        <span class="transaction-icon" aria-hidden="true">${isEarn ? "ğŸŒ±" : "ğŸ"}</span>
+        <div class="transaction-info"><strong>${transaction.description}</strong><span>${date}</span></div>
+        <span class="transaction-amount">${isEarn ? "+" : "âˆ’"}${transaction.amount.toLocaleString("ko-KR")} P</span>
+      </article>`;
+  }).join("");
+}
+
+/**
+ * Supabase point_transactionsë¥¼ ë‹¤ì‹œ ì½ì–´ ì§€ê°‘ê³¼ GREEN REPORTë¥¼ ê°±ì‹ í•©ë‹ˆë‹¤.
+ */
+async function loadPointData() {
+  if (!currentUser || !supabaseClient) return;
+  const { data, error } = await supabaseClient
+    .from("point_transactions")
+    .select("id, transaction_type, amount, description, created_at")
+    .order("created_at", { ascending: false });
+
+  if (error) throw error;
+  pointWallet.transactions = (data ?? []).map((transaction) => ({
+    id: transaction.id,
+    type: transaction.transaction_type,
+    amount: transaction.amount,
+    description: transaction.description,
+    createdAt: new Date(transaction.created_at),
+  }));
+  calculatePointBalance();
+  renderWallet();
+}
+
+function getSeoulDate() {
+  return new Intl.DateTimeFormat("en-CA", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    timeZone: "Asia/Seoul",
+  }).format(new Date());
+}
+
+function applyAirconRecord(record) {
+  if (!record) return;
+  const modeNames = { cool: "ëƒ‰ë°©", fan: "ì†¡í’", dry: "ì œìŠµ", auto: "ìë™" };
+  const fanNames = { auto: "ìë™", low: "ì•½í’", medium: "ì¤‘í’", high: "ê°•í’" };
+  airconState.power = record.power;
+  airconState.mode = modeNames[record.mode] ?? "ëƒ‰ë°©";
+  airconState.temperature = Number(record.temperature);
+  airconState.fan = fanNames[record.fan] ?? "ìë™";
+  airconState.usageMinutes = record.usage_minutes;
+  airconState.filter = record.filter_status;
+  airconState.sensor = record.sensor_status;
+}
+
+/**
+ * ê°€ìƒ IoT ê°’ì€ ë¡œê·¸ì¸ ì‚¬ìš©ìì˜ aircon_status í•œ í–‰ì— upsertí•©ë‹ˆë‹¤.
+ */
+async function persistAirconState() {
+  if (!currentUser || !supabaseClient) return;
+  const modeValues = { ëƒ‰ë°©: "cool", ì†¡í’: "fan", ì œìŠµ: "dry", ìë™: "auto" };
+  const fanValues = { ìë™: "auto", ì•½í’: "low", ì¤‘í’: "medium", ê°•í’: "high" };
+  const { error } = await supabaseClient.from("aircon_status").upsert({
+    user_id: currentUser.id,
+    power: airconState.power,
+    mode: modeValues[airconState.mode] ?? "cool",
+    temperature: airconState.temperature,
+    fan: fanValues[airconState.fan] ?? "auto",
+    usage_minutes: airconState.usageMinutes,
+    filter_status: airconState.filter,
+    sensor_status: airconState.sensor,
+    updated_at: new Date().toISOString(),
+  }, { onConflict: "user_id" });
+  if (error) throw error;
+}
+
+function resetUserData() {
+  currentProfile = null;
+  userMission.id = null;
+  userMission.missionId = null;
+  userMission.status = "available";
+  userMission.elapsedMinutes = 0;
+  userMission.rewardGranted = false;
+  pointWallet.transactions = [];
+  pointWallet.balance = 0;
+  rewardShop.orders = [];
+  renderAirconState();
+  renderWallet();
+  renderOrders();
+}
+
+/**
+ * ë¡œê·¸ì¸ ì§í›„ ì‚¬ìš©ì ì†Œìœ  ë°ì´í„°ì™€ ê³µê°œ ì¹´íƒˆë¡œê·¸ë¥¼ RLSê°€ ì ìš©ëœ ì„¸ì…˜ìœ¼ë¡œ ì½ìŠµë‹ˆë‹¤.
+ */
+async function loadUserData() {
+  if (!currentUser || !supabaseClient || dataLoading) return;
+  dataLoading = true;
+
+  try {
+    const [profileResult, missionResult, rewardsResult, airconResult, ordersResult] = await Promise.all([
+      supabaseClient.from("profiles").select("display_name, green_level").single(),
+      supabaseClient.from("missions").select("id, target_minutes, reward_points").eq("is_active", true).order("id").limit(1).single(),
+      supabaseClient.from("rewards").select("id, slug, category, name, description, price, icon").eq("is_active", true).order("sort_order"),
+      supabaseClient.from("aircon_status").select("power, mode, temperature, fan, usage_minutes, filter_status, sensor_status").single(),
+      supabaseClient.from("reward_orders").select("id, points_spent, status, created_at, rewards(name, icon)").order("created_at", { ascending: false }),
+    ]);
+
+    const firstError = [profileResult, missionResult, rewardsResult, airconResult, ordersResult].find((result) => result.error)?.error;
+    if (firstError) throw firstError;
+
+    currentProfile = profileResult.data;
+    userMission.missionId = missionResult.data.id;
+    userMission.targetMinutes = missionResult.data.target_minutes;
+    rewards = (rewardsResult.data ?? []).map((reward) => ({ ...reward }));
+    applyAirconRecord(airconResult.data);
+    rewardShop.orders = (ordersResult.data ?? []).map((order) => ({
+      id: order.id,
+      name: order.rewards?.name ?? "ë¦¬ì›Œë“œ",
+      icon: order.rewards?.icon ?? "ğŸ",
+      price: order.points_spent,
+      date: new Intl.DateTimeFormat("ko-KR", { month: "short", day: "numeric" }).format(new Date(order.created_at)),
+    }));
+
+    const { data: missionRecord, error: missionError } = await supabaseClient
+      .from("user_missions")
+      .select("id, status, elapsed_minutes, reward_granted")
+      .eq("mission_id", userMission.missionId)
+      .eq("mission_date", getSeoulDate())
+      .maybeSingle();
+    if (missionError) throw missionError;
+
+    if (missionRecord) {
+      userMission.id = missionRecord.id;
+      userMission.status = missionRecord.status;
+      userMission.elapsedMinutes = missionRecord.elapsed_minutes;
+      userMission.rewardGranted = missionRecord.reward_granted;
+    }
+
+    await loadPointData();
+    renderAirconState();
+    renderRewards();
+    renderOrders();
+    renderUser();
+  } catch (error) {
+    showToast(`ë°ì´í„°ë¥¼ ë¶ˆëŸ¬ì˜¤ì§€ ëª»í–ˆì–´ìš”: ${error.message}`);
+  } finally {
+    dataLoading = false;
+  }
+}
+
+function renderRewards() {
+  const visibleRewards = rewardShop.category === "all"
+    ? rewards
+    : rewards.filter((reward) => reward.category === rewardShop.category);
+
+  shopElements.categories.forEach((button) => {
+    button.classList.toggle("is-selected", button.dataset.rewardCategory === rewardShop.category);
+  });
+
+  shopElements.grid.innerHTML = visibleRewards.map((reward) => `
+    <button class="reward-card" type="button" data-reward-id="${reward.id}">
+      <span class="reward-image" aria-hidden="true">${reward.icon}</span>
+      <span class="reward-info"><span class="reward-category-label">${categoryNames[reward.category]}</span><strong>${reward.name}</strong><span class="reward-price">${reward.price.toLocaleString("ko-KR")} P</span></span>
+    </button>`).join("");
+
+  document.querySelectorAll("[data-reward-id]").forEach((button) => {
+    button.addEventListener("click", () => openRewardDetail(button.dataset.rewardId));
+  });
+}
+
+function openRewardDetail(rewardId) {
+  const reward = rewards.find((item) => String(item.id) === String(rewardId));
+  if (!reward) return;
+  rewardShop.selectedRewardId = reward.id;
+  shopElements.detailImage.textContent = reward.icon;
+  shopElements.detailCategory.textContent = categoryNames[reward.category];
+  shopElements.detailName.textContent = reward.name;
+  shopElements.detailDescription.textContent = reward.description;
+  shopElements.detailPrice.textContent = reward.price.toLocaleString("ko-KR");
+  shopElements.warning.hidden = true;
+  shopElements.modal.hidden = false;
+}
+
+function closeRewardDetail() {
+  shopElements.modal.hidden = true;
+  shopElements.warning.hidden = true;
+}
+
+function renderOrders() {
+  if (rewardShop.orders.length === 0) {
+    shopElements.orderList.innerHTML = '<div class="transaction-empty">ì•„ì§ êµ¬ë§¤í•œ ë¦¬ì›Œë“œê°€ ì—†ì–´ìš”.<br>ë§ˆìŒì— ë“œëŠ” ìƒí’ˆì„ ê³¨ë¼ ë³´ì„¸ìš”.</div>';
+    return;
+  }
+
+  shopElements.orderList.innerHTML = rewardShop.orders.map((order) => `
+    <article class="order-item"><span aria-hidden="true">${order.icon}</span><div><strong>${order.name}</strong><small>êµ¬ë§¤ ì™„ë£Œ Â· ${order.date}</small></div><span>âˆ’${order.price} P</span></article>`).join("");
+}
+
+async function purchaseSelectedReward() {
+  const reward = rewards.find((item) => String(item.id) === String(rewardShop.selectedRewardId));
+  if (!reward) return;
+
+  if (!currentUser || !supabaseClient) {
+    closeRewardDetail();
+    showView("my");
+    showToast("ë¡œê·¸ì¸ í›„ ë¦¬ì›Œë“œë¥¼ êµ¬ë§¤í•  ìˆ˜ ìˆì–´ìš”.");
+    return;
+  }
+
+  if (pointWallet.balance < reward.price) {
+    shopElements.warning.hidden = false;
+    return;
+  }
+
+  shopElements.purchase.disabled = true;
+  const { error } = await supabaseClient.rpc("purchase_reward", { p_reward_id: reward.id });
+  shopElements.purchase.disabled = false;
+
+  if (error) {
+    if (/insufficient points/i.test(error.message)) shopElements.warning.hidden = false;
+    else showToast("êµ¬ë§¤ ì¤‘ ë¬¸ì œê°€ ë°œìƒí–ˆì–´ìš”. ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.");
+    return;
+  }
+
+  await loadUserDataAfterPurchase();
+  closeRewardDetail();
+  showToast(`${reward.name} êµ¬ë§¤ê°€ ì™„ë£Œëì–´ìš”.`);
+}
+
+async function loadUserDataAfterPurchase() {
+  await loadPointData();
+  const { data, error } = await supabaseClient
+    .from("reward_orders")
+    .select("id, points_spent, status, created_at, rewards(name, icon)")
+    .order("created_at", { ascending: false });
+  if (error) throw error;
+  rewardShop.orders = (data ?? []).map((order) => ({
+    id: order.id,
+    name: order.rewards?.name ?? "ë¦¬ì›Œë“œ",
+    icon: order.rewards?.icon ?? "ğŸ",
+    price: order.points_spent,
+    date: new Intl.DateTimeFormat("ko-KR", { month: "short", day: "numeric" }).format(new Date(order.created_at)),
+  }));
+  renderOrders();
+  renderUser();
+}
+
+function showAuthMessage(message, isError = false) {
+  authElements.message.textContent = message;
+  authElements.message.hidden = false;
+  authElements.message.classList.toggle("is-error", isError);
+}
+
+function setAuthMode(mode) {
+  authMode = mode;
+  const isSignup = mode === "signup";
+  authElements.nameField.hidden = !isSignup;
+  authElements.password.autocomplete = isSignup ? "new-password" : "current-password";
+  authElements.submit.textContent = isSignup ? "íšŒì›ê°€ì…" : "ë¡œê·¸ì¸";
+  authElements.title.textContent = isSignup ? "GreenONì„ ì‹œì‘í•´ ë³¼ê¹Œìš”?" : "ë‹¤ì‹œ ë§Œë‚˜ì„œ ë°˜ê°€ì›Œìš”!";
+  authElements.subtitle.textContent = isSignup
+    ? "ê³„ì •ì„ ë§Œë“¤ê³  ë‚˜ë§Œì˜ ì¹œí™˜ê²½ ì—¬ì •ì„ ê¸°ë¡í•˜ì„¸ìš”."
+    : "ë¡œê·¸ì¸í•˜ê³  ë‚˜ì˜ GREEN POINTë¥¼ í™•ì¸í•˜ì„¸ìš”.";
+  authElements.message.hidden = true;
+
+  authElements.tabs.forEach((button) => {
+    const isSelected = button.dataset.authMode === mode;
+    button.classList.toggle("is-selected", isSelected);
+    button.setAttribute("aria-selected", String(isSelected));
+  });
+}
+
+function renderUser() {
+  const isSignedIn = Boolean(currentUser);
+  authElements.card.hidden = isSignedIn;
+  authElements.dashboard.hidden = !isSignedIn;
+
+  if (!currentUser) return;
+  const displayName = currentProfile?.display_name || currentUser.user_metadata?.display_name || currentUser.email?.split("@")[0] || "GreenON ì‚¬ìš©ì";
+  authElements.profileName.textContent = displayName;
+  authElements.profileEmail.textContent = currentUser.email || "";
+  authElements.profileInitial.textContent = displayName.charAt(0).toUpperCase();
+  const levelNames = ["SEED", "SPROUT", "LEAF", "TREE", "FOREST"];
+  const greenLevel = currentProfile?.green_level ?? 1;
+  authElements.profileLevel.textContent = `LEVEL ${greenLevel} Â· ${levelNames[greenLevel - 1] ?? "SEED"}`;
+  authElements.reportMissions.textContent = userMission.status === "success" ? "1" : "0";
+  authElements.reportPoints.textContent = `${pointWallet.balance.toLocaleString("ko-KR")} P`;
+  authElements.reportOrders.textContent = rewardShop.orders.length;
+}
+
+async function submitAuthForm(event) {
+  event.preventDefault();
+
+  if (!supabaseClient) {
+    showAuthMessage("Supabase ì„¤ì •ì„ ë¶ˆëŸ¬ì˜¤ì§€ ëª»í–ˆìŠµë‹ˆë‹¤. ë„¤íŠ¸ì›Œí¬ ì—°ê²°ì„ í™•ì¸í•´ ì£¼ì„¸ìš”.", true);
+    return;
+  }
+
+  const email = authElements.email.value.trim();
+  const password = authElements.password.value;
+  authElements.submit.disabled = true;
+  authElements.message.hidden = true;
+
+  try {
+    if (authMode === "signup") {
+      const displayName = authElements.name.value.trim() || email.split("@")[0];
+      const { data, error } = await supabaseClient.auth.signUp({ email, password, options: { data: { display_name: displayName } } });
+      if (error) throw error;
+      if (!data.session) {
+        showAuthMessage("ê°€ì… í™•ì¸ ë©”ì¼ì„ ë³´ëƒˆì–´ìš”. ì´ë©”ì¼ ì¸ì¦ í›„ ë¡œê·¸ì¸í•´ ì£¼ì„¸ìš”.");
+      }
+    } else {
+      const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+      if (error) throw error;
+    }
+  } catch (error) {
+    // ê³„ì • ì¡´ì¬ ì—¬ë¶€ë¥¼ êµ¬ì²´ì ìœ¼ë¡œ ë…¸ì¶œí•˜ì§€ ì•Šê³  ì‚¬ìš©ìì—ê²Œ ì•ˆì „í•œ ê³µí†µ ë©”ì‹œì§€ë¥¼ ë³´ì—¬ ì¤ë‹ˆë‹¤.
+    showAuthMessage(error?.message || "ì¸ì¦ ì¤‘ ë¬¸ì œê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤. ì ì‹œ í›„ ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.", true);
+  } finally {
+    authElements.submit.disabled = false;
+  }
+}
+
+async function signOut() {
+  if (!supabaseClient) return;
+  const { error } = await supabaseClient.auth.signOut();
+  if (error) showToast("ë¡œê·¸ì•„ì›ƒí•˜ì§€ ëª»í–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì„¸ìš”.");
+}
+
+async function initializeAuth() {
+  if (!supabaseClient) {
+    showAuthMessage("Supabase í´ë¼ì´ì–¸íŠ¸ë¥¼ ë¶ˆëŸ¬ì˜¤ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.", true);
+    return;
+  }
+
+  const { data } = await supabaseClient.auth.getSession();
+  currentUser = data.session?.user ?? null;
+  renderUser();
+  if (currentUser) await loadUserData();
+
+  supabaseClient.auth.onAuthStateChange(async (_event, session) => {
+    currentUser = session?.user ?? null;
+    if (currentUser) {
+      renderUser();
+      await loadUserData();
+      showToast("Carrier GreenONì— ë¡œê·¸ì¸í–ˆì–´ìš”.");
+    } else {
+      resetUserData();
+      renderUser();
+    }
+  });
+}
+
+/**
+ * +30ë¶„ ì‹œë®¬ë ˆì´ì…˜ì„ ì‹¤í–‰í•˜ê³ , ì§„í–‰ ì¤‘ì¸ ë¯¸ì…˜ì˜ ì¡°ê±´ê³¼ ì„±ê³µ ì—¬ë¶€ë¥¼ í™•ì¸í•©ë‹ˆë‹¤.
+ */
+async function simulateThirtyMinutes() {
+  airconState.usageMinutes += 30;
+
+  if (userMission.status === "active") {
+    if (!areMissionConditionsValid()) {
+      userMission.status = "failed";
+    } else {
+      userMission.elapsedMinutes = Math.min(userMission.targetMinutes, userMission.elapsedMinutes + 30);
+      if (userMission.elapsedMinutes >= userMission.targetMinutes) userMission.status = "success";
+    }
+  }
+
+  renderAirconState();
+  if (!currentUser || !supabaseClient) return;
+
+  try {
+    await persistAirconState();
+    if (userMission.id) {
+      const { error: missionError } = await supabaseClient
+        .from("user_missions")
+        .update({ status: userMission.status, elapsed_minutes: userMission.elapsedMinutes })
+        .eq("id", userMission.id);
+      if (missionError) throw missionError;
+
+      if (userMission.status === "success" && !userMission.rewardGranted) {
+        const { data: rewardPoints, error: rewardError } = await supabaseClient
+          .rpc("complete_green_mission", { p_user_mission_id: userMission.id });
+        if (rewardError) throw rewardError;
+        userMission.rewardGranted = true;
+        await loadPointData();
+        renderUser();
+        showToast(`ë¯¸ì…˜ ì„±ê³µ! GREEN POINT ${rewardPoints}Pê°€ ì ë¦½ëì–´ìš”.`);
+      }
+    }
+  } catch (error) {
+    showToast(`ì§„í–‰ ìƒíƒœë¥¼ ì €ì¥í•˜ì§€ ëª»í–ˆì–´ìš”: ${error.message}`);
+  }
+}
+
+// ì „ì› ë²„íŠ¼ì€ ì„œë²„ í˜¸ì¶œ ì—†ì´ í˜„ì¬ ë¸Œë¼ìš°ì € ë©”ëª¨ë¦¬ì˜ ê°€ìƒ ìƒíƒœë§Œ ë³€ê²½í•©ë‹ˆë‹¤.
+airconElements.powerToggle.addEventListener("click", () => {
+  airconState.power = !airconState.power;
+  renderAirconState();
+  persistAirconState().catch((error) => showToast(`ìƒíƒœ ì €ì¥ ì‹¤íŒ¨: ${error.message}`));
+});
+
+// ì„¤ì • ì˜¨ë„ëŠ” ì‹¤ì œ ì—ì–´ì»¨ì—ì„œ ì¼ë°˜ì ìœ¼ë¡œ ì‚¬ìš©í•˜ëŠ” 18~30â„ƒ ë²”ìœ„ë¡œ ì œí•œí•©ë‹ˆë‹¤.
+document.querySelector("#temperature-down").addEventListener("click", () => {
+  airconState.temperature = Math.max(18, airconState.temperature - 1);
+  renderAirconState();
+  persistAirconState().catch((error) => showToast(`ìƒíƒœ ì €ì¥ ì‹¤íŒ¨: ${error.message}`));
+});
+
+document.querySelector("#temperature-up").addEventListener("click", () => {
+  airconState.temperature = Math.min(30, airconState.temperature + 1);
+  renderAirconState();
+  persistAirconState().catch((error) => showToast(`ìƒíƒœ ì €ì¥ ì‹¤íŒ¨: ${error.message}`));
+});
+
+// ë°”ëŒ ì„¸ê¸° ë²„íŠ¼ì„ ëˆ„ë¥¼ ë•Œë§ˆë‹¤ ì •í•´ì§„ ìˆœì„œëŒ€ë¡œ ë‹¤ìŒ ë‹¨ê³„ë¡œ ì´ë™í•©ë‹ˆë‹¤.
+const fanSteps = ["ìë™", "ì•½í’", "ì¤‘í’", "ê°•í’"];
+airconElements.fanControl.addEventListener("click", () => {
+  const currentIndex = fanSteps.indexOf(airconState.fan);
+  airconState.fan = fanSteps[(currentIndex + 1) % fanSteps.length];
+  renderAirconState();
+  persistAirconState().catch((error) => showToast(`ìƒíƒœ ì €ì¥ ì‹¤íŒ¨: ${error.message}`));
+});
+
+document.querySelector("#usage-control").addEventListener("click", () => {
+  simulateThirtyMinutes();
+});
+
+// ì •ìƒÂ·í•„í„° ì ê²€Â·ì„¼ì„œ ì˜¤ë¥˜ ì‹œë‚˜ë¦¬ì˜¤ëŠ” ì„œë¡œ í•˜ë‚˜ë§Œ ì„ íƒë˜ë„ë¡ ì²˜ë¦¬í•©ë‹ˆë‹¤.
+document.querySelectorAll("[data-scenario]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const scenario = button.dataset.scenario;
+    airconState.filter = scenario === "filter" ? "check" : "clean";
+    airconState.sensor = scenario === "sensor" ? "error" : "normal";
+
+    document.querySelectorAll("[data-scenario]").forEach((scenarioButton) => {
+      scenarioButton.classList.toggle("is-selected", scenarioButton === button);
+    });
+
+    renderAirconState();
+    persistAirconState().catch((error) => showToast(`ìƒíƒœ ì €ì¥ ì‹¤íŒ¨: ${error.message}`));
+  });
+});
+
+missionElements.start.addEventListener("click", async () => {
+  if (!currentUser || !supabaseClient) {
+    showView("my");
+    showToast("ë¡œê·¸ì¸ í›„ GREEN MISSIONì— ì°¸ì—¬í•  ìˆ˜ ìˆì–´ìš”.");
+    return;
+  }
+
+  if (userMission.status === "failed") {
+    userMission.status = "available";
+    userMission.elapsedMinutes = 0;
+  }
+
+  if (!areMissionConditionsValid()) {
+    renderMissionState();
+    return;
+  }
+
+  userMission.status = "active";
+  userMission.elapsedMinutes = 0;
+  renderMissionState();
+
+  try {
+    if (userMission.id) {
+      const { error } = await supabaseClient
+        .from("user_missions")
+        .update({ status: "active", elapsed_minutes: 0, reward_granted: false, completed_at: null })
+        .eq("id", userMission.id);
+      if (error) throw error;
+    } else {
+      const { data, error } = await supabaseClient
+        .from("user_missions")
+        .insert({ user_id: currentUser.id, mission_id: userMission.missionId, status: "active", elapsed_minutes: 0 })
+        .select("id")
+        .single();
+      if (error) throw error;
+      userMission.id = data.id;
+    }
+  } catch (error) {
+    userMission.status = "available";
+    renderMissionState();
+    showToast(`ë¯¸ì…˜ì„ ì‹œì‘í•˜ì§€ ëª»í–ˆì–´ìš”: ${error.message}`);
+  }
+});
+
+missionElements.time.addEventListener("click", simulateThirtyMinutes);
+
+walletElements.filters.forEach((button) => {
+  button.addEventListener("click", () => {
+    pointWallet.filter = button.dataset.pointFilter;
+    renderWallet();
+  });
+});
+
+shopElements.categories.forEach((button) => {
+  button.addEventListener("click", () => {
+    rewardShop.category = button.dataset.rewardCategory;
+    renderRewards();
+  });
+});
+
+document.querySelectorAll("[data-close-reward]").forEach((button) => {
+  button.addEventListener("click", closeRewardDetail);
+});
+
+shopElements.purchase.addEventListener("click", purchaseSelectedReward);
+
+authElements.tabs.forEach((button) => {
+  button.addEventListener("click", () => setAuthMode(button.dataset.authMode));
+});
+authElements.form.addEventListener("submit", submitAuthForm);
+authElements.logout.addEventListener("click", signOut);
+
+// ëª¨ë“  í™”ë©´ ì´ë™ ë²„íŠ¼ì€ data-nav-target ê°’ë§Œ ë°”ê¾¸ë©´ ê°™ì€ ë°©ì‹ìœ¼ë¡œ ë™ì‘í•©ë‹ˆë‹¤.
+navigationButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    showView(button.dataset.navTarget);
+  });
+});
+
+document.querySelectorAll("[data-toast]").forEach((button) => {
+  button.addEventListener("click", () => {
+    showToast(button.dataset.toast);
+  });
+});
+
+// í•œêµ­ ì‹œê°„ ê¸°ì¤€ ë‚ ì§œë¥¼ í‘œì‹œí•´ í™ˆ í™”ë©´ì´ ì¡°ê¸ˆ ë” ì‚´ì•„ ìˆëŠ” ëŠë‚Œì„ ì¤ë‹ˆë‹¤.
+const formattedToday = new Intl.DateTimeFormat("ko-KR", {
+  month: "long",
+  day: "numeric",
+  weekday: "short",
+  timeZone: "Asia/Seoul",
+}).format(new Date());
+
+todayLabel.textContent = `${formattedToday} Â· ì˜¤ëŠ˜ë„ ì‹œì›í•˜ê³  ê°€ë³ê²Œ`;
+
+// ìƒˆë¡œê³ ì¹¨í•´ë„ URL í•´ì‹œì™€ ê°™ì€ í™”ë©´ì„ ì—´ë˜, ì•Œ ìˆ˜ ì—†ëŠ” ì£¼ì†ŒëŠ” í™ˆìœ¼ë¡œ ì²˜ë¦¬í•©ë‹ˆë‹¤.
+const initialView = window.location.hash.replace("#", "") || "home";
+showView(initialView);
+renderAirconState();
+renderWallet();
+renderRewards();
+renderOrders();
+setAuthMode("login");
+renderUser();
+initializeAuth().catch((error) => {
+  showAuthMessage(`ì´ˆê¸° ë°ì´í„°ë¥¼ ë¶ˆëŸ¬ì˜¤ì§€ ëª»í–ˆìŠµë‹ˆë‹¤: ${error.message}`, true);
+});
+
