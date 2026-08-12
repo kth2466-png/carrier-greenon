@@ -2396,3 +2396,28 @@ a:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* 손가락으로 누르는 모든 주요 조작부는 모바일 권장 터치 영역인 44px 이상을 확보합니다. */
+.brand,
+.icon-button,
+.weather-actions button,
+.toggle-button,
+.stepper button,
+.outline-control,
+.scenario-button,
+.mission-tip button,
+.balance-card-bottom button,
+.point-filters button,
+.shop-balance button,
+.reward-categories button,
+.auth-tabs button,
+.modal-close {
+  min-height: 44px;
+}
+
+.icon-button,
+.stepper button,
+.mission-tip button,
+.modal-close {
+  min-width: 44px;
+}
