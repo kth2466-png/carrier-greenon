@@ -141,6 +141,8 @@
 
 > 배포 검증 메모 (2026-08-11): Render Static Site `carrier-greenon`을 `main` 브랜치에 연결했고 첫 배포 `dep-d9tcs8qjobas73clghp0`가 `live` 상태입니다. `https://carrier-greenon-gzde.onrender.com` 요청은 HTTP 200, Carrier GreenON 제목과 Supabase 설정 스크립트를 반환했습니다. 임시 인증 사용자로 로그인 200, 미션 기록 201, 완료 RPC 200·80P 적립, 50P 상품 구매 200, 앱 계산 잔액 30P와 주문 1건을 확인했습니다. 임시 데이터는 모두 삭제했습니다. 회원가입은 실제 수신 가능한 이메일 확인이 필요해 미완료로 유지합니다.
 
+> 재확인 메모 (2026-08-12): 최신 Render 배포 `dep-d9td2or7uimc73ch206g`는 계속 `live`, Supabase Security Advisor 경고는 0건입니다. 실제 Auth 사용자는 0명이므로 수신 가능한 이메일을 이용한 회원가입과 확인 링크 검증이 필요합니다.
+
 ## FINAL CHECK
 
 - [x] PROJECT.md 요구사항 누락 검사
@@ -151,4 +153,4 @@
 - [x] 전체 기능 자동 회귀 테스트
 - [x] 최종 배포 확인
 
-> 최종 검증 메모 (2026-08-11): 필수 화면·DOM ID·내비게이션 대상·반응형 CSS·Blue 정상 상태·Red 오류 상태·Supabase 저장 코드·localStorage 미사용·비밀키 미포함과 production 산출물 무결성을 자동 검사했습니다. 현재 연결 가능한 브라우저가 0개여서 실제 모바일 시각 검사는 보류했고, 배포 URL E2E 검사는 Render 배포가 가능해진 뒤 완료합니다.
+> 최종 검증 메모 (2026-08-12): 필수 화면·DOM ID·내비게이션 대상·반응형 CSS·Blue 정상 상태·Red 오류 상태·Supabase 저장 코드·localStorage 미사용·비밀키 미포함과 production 산출물 무결성을 자동 검사했습니다. Render 배포와 HTTP 접속은 완료됐지만 현재 연결 가능한 브라우저가 0개여서 360px·390px·768px 실제 시각 검사는 미완료로 유지합니다.
