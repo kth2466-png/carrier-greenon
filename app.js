@@ -652,7 +652,15 @@ async function submitAuthForm(event) {
   try {
     if (authMode === "signup") {
       const displayName = authElements.name.value.trim() || email.split("@")[0];
-      const { data, error } = await supabaseClient.auth.signUp({ email, password, options: { data: { display_name: displayName } } });
+      const { data, error } = await supabaseClient.auth.signUp({
+        email,
+        password,
+        options: {
+          data: { display_name: displayName },
+          // 확인 메일을 누른 뒤 localhost가 아니라 현재 배포 사이트의 MY 화면으로 돌아옵니다.
+          emailRedirectTo: `${window.location.origin}/#my`,
+        },
+      });
       if (error) throw error;
       if (!data.session) {
         showAuthMessage("가입 확인 메일을 보냈어요. 이메일 인증 후 로그인해 주세요.");
