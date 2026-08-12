@@ -133,7 +133,7 @@
 - [x] Build 성공
 - [x] 배포 성공
 - [x] 배포 URL 접속
-- [ ] 회원가입 테스트
+- [x] 회원가입 테스트
 - [x] 로그인 테스트
 - [x] 미션 테스트
 - [x] 포인트 적립 테스트
@@ -142,6 +142,8 @@
 > 배포 검증 메모 (2026-08-11): Render Static Site `carrier-greenon`을 `main` 브랜치에 연결했고 첫 배포 `dep-d9tcs8qjobas73clghp0`가 `live` 상태입니다. `https://carrier-greenon-gzde.onrender.com` 요청은 HTTP 200, Carrier GreenON 제목과 Supabase 설정 스크립트를 반환했습니다. 임시 인증 사용자로 로그인 200, 미션 기록 201, 완료 RPC 200·80P 적립, 50P 상품 구매 200, 앱 계산 잔액 30P와 주문 1건을 확인했습니다. 임시 데이터는 모두 삭제했습니다. 회원가입은 실제 수신 가능한 이메일 확인이 필요해 미완료로 유지합니다.
 
 > 재확인 메모 (2026-08-12): 최신 Render 배포 `dep-d9td2or7uimc73ch206g`는 계속 `live`, Supabase Security Advisor 경고는 0건입니다. 실제 Auth 사용자는 0명이므로 수신 가능한 이메일을 이용한 회원가입과 확인 링크 검증이 필요합니다.
+
+> 실제 회원가입 검증 (2026-08-12): 배포 사이트에서 실제 이메일 사용자 1명이 생성됐고 이메일 확인, implicit 로그인, 프로필 및 가상 에어컨 초기 데이터 생성을 확인했습니다. 기존 확인 메일은 인증 자체는 성공했지만 Supabase 기본 Site URL인 `http://localhost:3000`으로 이동했습니다. 이후 가입에는 현재 배포 주소를 `emailRedirectTo`로 명시하도록 수정했습니다.
 
 ## FINAL CHECK
 
