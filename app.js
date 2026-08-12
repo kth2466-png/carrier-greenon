@@ -113,7 +113,7 @@ const shopElements = {
   detailImage: document.querySelector("#reward-detail-image"),
   detailCategory: document.querySelector("#reward-detail-category"),
   detailName: document.querySelector("#reward-detail-name"),
-  detailDescription: document.querySelector("#reward-detail-description"),
+  detailDescription: document.querySelector("#reward-detail-description"),
   detailPrice: document.querySelector("#reward-detail-price"),
   warning: document.querySelector("#purchase-warning"),
   purchase: document.querySelector("#purchase-button"),
@@ -252,7 +252,7 @@ function renderAirconState() {
  */
 function getMissionConditions() {
   return {
-    power: airconState.power && airconState.mode === "냉방",
+    power: airconState.power && airconState.mode === "냉방",
     temperature: airconState.temperature >= 26,
     device: airconState.filter === "clean" && airconState.sensor === "normal",
   };
@@ -373,7 +373,7 @@ async function loadPointData() {
     type: transaction.transaction_type,
     amount: transaction.amount,
     description: transaction.description,
-    createdAt: new Date(transaction.created_at),
+    createdAt: new Date(transaction.created_at),
   }));
   calculatePointBalance();
   renderWallet();
@@ -507,7 +507,7 @@ function renderRewards() {
 
   shopElements.grid.innerHTML = visibleRewards.map((reward) => `
     <button class="reward-card" type="button" data-reward-id="${reward.id}">
-      <span class="reward-image" aria-hidden="true">${reward.icon}</span>
+      <span class="reward-image" aria-hidden="true">${reward.icon}</span>
       <span class="reward-info"><span class="reward-category-label">${categoryNames[reward.category]}</span><strong>${reward.name}</strong><span class="reward-price">${reward.price.toLocaleString("ko-KR")} P</span></span>
     </button>`).join("");
 
@@ -632,7 +632,7 @@ function renderUser() {
   const greenLevel = currentProfile?.green_level ?? 1;
   authElements.profileLevel.textContent = `LEVEL ${greenLevel} · ${levelNames[greenLevel - 1] ?? "SEED"}`;
   authElements.reportMissions.textContent = userMission.status === "success" ? "1" : "0";
-  authElements.reportPoints.textContent = `${pointWallet.balance.toLocaleString("ko-KR")} P`;
+  authElements.reportPoints.textContent = `${pointWallet.balance.toLocaleString("ko-KR")} P`;
   authElements.reportOrders.textContent = rewardShop.orders.length;
 }
 
@@ -779,7 +779,7 @@ document.querySelectorAll("[data-scenario]").forEach((button) => {
   button.addEventListener("click", () => {
     const scenario = button.dataset.scenario;
     airconState.filter = scenario === "filter" ? "check" : "clean";
-    airconState.sensor = scenario === "sensor" ? "error" : "normal";
+    airconState.sensor = scenario === "sensor" ? "error" : "normal";
 
     document.querySelectorAll("[data-scenario]").forEach((scenarioButton) => {
       scenarioButton.classList.toggle("is-selected", scenarioButton === button);
@@ -897,4 +897,3 @@ renderUser();
 initializeAuth().catch((error) => {
   showAuthMessage(`초기 데이터를 불러오지 못했습니다: ${error.message}`, true);
 });
-
